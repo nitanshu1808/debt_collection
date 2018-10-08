@@ -1,14 +1,5 @@
 FactoryBot.define do
-  factory :business do
-    email          { FFaker::Internet.email }
-    user_name      { FFaker::Internet.user_name }
-    name           { FFaker::Name.name }
-    password       { FFaker::Internet.email }
-    address        { FFaker::AddressUK.neighborhood }
-    county         { FFaker::AddressUK.city }
-    city           { FFaker::AddressUK.county }
-    contact_number { FFaker::PhoneNumberDA.mobile_phone_number}
-    description    { FFaker::Book.title }
-    postal_code    { FFaker::AddressUS.zip_code}
+  factory :business, parent: :user do
+    type { "Business" }
   end
 end

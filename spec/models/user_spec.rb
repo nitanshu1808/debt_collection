@@ -25,18 +25,8 @@ RSpec.describe User, type: :model do
       expect(user.valid?).to eql(false)
     end
 
-    it "valdates address presence" do
-      user.address = nil
-      expect(user.valid?).to eql(false)
-    end
-
-    it "valdates county presence" do
-      user.county = nil
-      expect(user.valid?).to eql(false)
-    end
-
-    it "valdates county presence" do
-      user.county = nil
+    it "validates email format" do
+      user.email =  "nitanshugmail.com"
       expect(user.valid?).to eql(false)
     end
 
@@ -53,11 +43,8 @@ RSpec.describe User, type: :model do
     it "verifies email uniqueness" do
       duplicate_user.email = user.email
       expect(duplicate_user.valid?).to eql(false)
-      expect(duplicate_user.errors.full_messages.first).to eql(I18n.t("user.already_exist"))
     end
   end
-
-  
 
   context "validate user password" do
     let!(:user)           { build(:lawyer) }

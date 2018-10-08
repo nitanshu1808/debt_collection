@@ -6,13 +6,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string      :encrypted_password,  null: false, default: ""
       t.string      :user_name,           null: false, default: ""
       t.string      :name,                null: false, default: ""
-      t.string      :type,                null: false
+      t.string      :type
       t.references  :employer,            index: true
+      t.boolean     :profile_completed,   default: false
       t.text        :description
-      t.text        :address,             null: false, default: ""
-      t.string      :city,                null: false, default: ""
-      t.string      :postal_code,         null: false, default: ""
-      t.string      :county,              null: false
       t.integer     :contact_number
       t.timestamps
     end

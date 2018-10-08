@@ -17,3 +17,4 @@ en:
     user_name:            'User Name'
     password:             'Password'
     wrong_credentials:    'Invalid email/password combination'
+    valid_email:          'Invalid Email. Please enter a valid email.'
