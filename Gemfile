@@ -16,6 +16,7 @@ gem 'kaminari'
 gem 'devise'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'omniauth-facebook'
+gem "azure-storage", require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -35,7 +36,7 @@ group :development do
   gem 'brakeman'
   gem 'deadweight'
   gem 'rails-erd'
-
+  gem "figaro"
 end
 
 group :test do
