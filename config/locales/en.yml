@@ -12,6 +12,7 @@ en:
     logged_out:           'Logged out successfully'
     signed_in:            'Signed In Successfully'
     welcome_user:         'Welcome %{val}'
+    invalid_to_date:      '"To Date" should be less than "From Date"'
   user:
     already_exist:        'Email has already been taken'
     user_name:            'User Name'
@@ -20,5 +21,3 @@ en:
     valid_email:          'Invalid Email. Please enter a valid email.'
   conversation:
     sndr_rcvr_unique:     'Sender and Receiver cannot be same'
-  work_experience:
-    invalid_to_date:      '"To Date" should be less than "From Date"'
