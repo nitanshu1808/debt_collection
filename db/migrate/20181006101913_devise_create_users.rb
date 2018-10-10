@@ -7,7 +7,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string      :user_name,           null: false, default: ""
       t.string      :name,                null: false, default: ""
       t.string      :type
-      t.references  :employer,            index: true
+      t.references  :employer
       t.boolean     :profile_completed,   default: false
       t.text        :description
       t.integer     :contact_number

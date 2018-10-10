@@ -1,5 +1,4 @@
 FactoryBot.define do
-  factory :lawyer, parent: :user do
-    type { "Lawyer" }
+  factory :lawyer, class: Lawyer, parent: :user do
   end
 end

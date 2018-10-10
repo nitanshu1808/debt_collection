@@ -19,5 +19,9 @@ RSpec.describe Provider, type: :model do
       expect(provider.valid?).to eql(false)
     end
 
+    it "saves provider" do
+      expect(provider.save).to eql(true)
+    end
+
   end
 end
