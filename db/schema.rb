@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_13_002722) do
+ActiveRecord::Schema.define(version: 2018_10_13_131748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,13 +47,30 @@ ActiveRecord::Schema.define(version: 2018_10_13_002722) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
+  create_table "bids", force: :cascade do |t|
+    t.integer "lawyer_id", null: false
+    t.bigint "claim_id", null: false
+    t.float "amount", default: 0.0, null: false
+    t.integer "status", default: 0, null: false
+    t.integer "fee_type", default: 0, null: false
+    t.boolean "is_deleted", default: false, null: false
+    t.string "terms_of_service"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["claim_id"], name: "index_bids_on_claim_id"
+  end
+
   create_table "claims", force: :cascade do |t|
     t.integer "business_id", null: false
     t.bigint "collection_area_id", null: false
     t.float "amount", null: false
-    t.string "claim_number", null: false
+    t.string "identifier", null: false
     t.string "additional_desciption", null: false
+    t.integer "status", default: 0, null: false
+    t.boolean "is_rfp", default: false, null: false
+    t.string "county", default: "", null: false
     t.datetime "pending_since", null: false
+    t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["collection_area_id"], name: "index_claims_on_collection_area_id"
@@ -112,6 +129,14 @@ ActiveRecord::Schema.define(version: 2018_10_13_002722) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_providers_on_user_id"
+  end
+
+  create_table "request_for_proposals", force: :cascade do |t|
+    t.integer "lawyer_id", null: false
+    t.integer "claim_id", null: false
+    t.boolean "is_responded", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
