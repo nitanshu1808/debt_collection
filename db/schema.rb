@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_220654) do
+ActiveRecord::Schema.define(version: 2018_10_13_002722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,34 @@ ActiveRecord::Schema.define(version: 2018_10_10_220654) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "claims", force: :cascade do |t|
+    t.integer "business_id", null: false
+    t.bigint "collection_area_id", null: false
+    t.float "amount", null: false
+    t.string "claim_number", null: false
+    t.string "additional_desciption", null: false
+    t.datetime "pending_since", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["collection_area_id"], name: "index_claims_on_collection_area_id"
+  end
+
+  create_table "collection_areas", force: :cascade do |t|
+    t.string "name", default: "f", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "collection_areas_lawyers", id: false, force: :cascade do |t|
+    t.bigint "collection_area_id", null: false
+    t.bigint "lawyer_id", null: false
+  end
+
+  create_table "collection_areas_users", id: false, force: :cascade do |t|
+    t.bigint "collection_area_id", null: false
+    t.bigint "user_id", null: false
   end
 
   create_table "conversations", force: :cascade do |t|

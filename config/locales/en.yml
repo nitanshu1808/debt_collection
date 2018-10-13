@@ -21,3 +21,5 @@ en:
     valid_email:          'Invalid Email. Please enter a valid email.'
   conversation:
     sndr_rcvr_unique:     'Sender and Receiver cannot be same'
+  collection_area:
+    unique:               'Name has already been taken'

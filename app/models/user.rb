@@ -13,13 +13,15 @@ class User < ApplicationRecord
   ################################################################################
   #associations
   with_options dependent: :destroy do |assoc|
-    assoc.has_one     :provider
-    assoc.has_one     :address
-    assoc.has_many    :employees, class_name: "User", foreign_key: "employer_id"
-    assoc.has_many    :messages
-    assoc.has_many    :receiver_conversations, foreign_key: "receiver_id", class_name: 'Conversation'
-    assoc.has_many    :sender_conversations,   foreign_key: "sender_id", class_name: 'Conversation'
+    assoc.has_one           :provider
+    assoc.has_one           :address
+    assoc.has_many          :employees, class_name: "User", foreign_key: "employer_id"
+    assoc.has_many          :messages
+    assoc.has_many          :receiver_conversations, foreign_key: "receiver_id", class_name: 'Conversation'
+    assoc.has_many          :sender_conversations,   foreign_key: "sender_id", class_name: 'Conversation'
+    assoc.has_one_attached  :image
+    assoc.has_one_attached  :cover_image
   end
-  belongs_to          :employer, class_name: "User", optional: true
+  belongs_to                :employer, class_name: "User", optional: true
   ################################################################################
 end
