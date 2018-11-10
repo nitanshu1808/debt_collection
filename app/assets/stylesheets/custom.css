@@ -1,0 +1,400 @@
+.app-icon{
+  width:35px;
+  margin: -6px 0px;
+}
+
+.app-name{
+  color: darkred !important;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.align-nav{
+  align-self: right !important;
+}
+.login-btn{
+  color: darkred !important;
+  border-color: darkred !important;
+}
+
+.welcm-msg{
+  color: darkred !important;
+  font-weight: bold;
+  font-size: 70px;
+  border-bottom: 0.2px solid darkred;
+}
+
+.align-data{
+  margin: 18px 20px 20px 20px;
+}
+
+.align-logo-img{
+  margin: 60px 0px 20px 0px;
+}
+
+.login-form-heading{
+  color: darkred;
+}
+
+.or-line span {
+  width: 15px;
+  height: 18px;
+  font-size: 16px;
+  color: #7d7d7d;
+  line-height: 15px;
+  margin: 10px 0px;
+}
+
+.insta-logo{
+  width: 100%;
+  height: 60px;
+  margin: 10px 0px;
+}
+
+
+.align-field{
+  margin: 25px 0px;
+  height: 60px !important;
+}
+
+
+.agree-to-use{
+  color: black;
+  font-size: 15px;
+  margin: 0px 0px 20px 0px;
+  float: left;
+}
+
+
+.submit-btn{
+  width: 100%;
+  height: 40px;
+  background-color: #660000;
+  color: white;
+}
+
+.req-text {
+  color: #b0b0b0;
+  font-size: 13px;
+  margin: -10px 0 10px 0px;
+  font-style: italic;
+  width: 100%;
+  text-align: left;
+  float: left !important;
+}
+.custom-logo{
+  height: 300px;
+  width: 300px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: whitesmoke;
+}
+.error{
+  color: red  !important;
+  font-size: 15px !important;
+  float: left;
+  margin: 1px 0px 10px 0px;
+}
+
+.validation-error{
+  color: red;
+  float: left;
+  margin: -15px 0px 10px 0px;
+}
+
+.instruction_msg{
+  color: darkred !important;
+  font-weight: bold;
+  font-size: 70px;
+}
+
+.welcome_user_msg{
+  margin: 70px 0px;
+  color: darkred !important;
+  font-weight: bold;
+  font-size: 70px;
+  border-bottom: 0.2px solid darkred;
+}
+
+.align-login{
+  margin: 50px 0px;
+}
+
+.login-frm-hdr{
+  color: darkred;
+  font-size: 35px;
+  margin: 10px 0px !important;
+  outline: 0.1px solid darkred;
+  padding: 20px 0px;
+}
+
+.login-logo{
+  height: 70px;
+  width: 70px;
+  margin: 10px 0px; 
+}
+
+.dont-have-account{
+  color: black;
+  margin: 20px 0px;
+  font-size: 15px;
+}
+
+.form-submit{
+  width: 100%;
+  height: 50px;
+  background-color: #660000;
+  color: white;
+  margin: 0px 0px 10px 0px;
+}
+
+.login-div{
+  border: 0.1px solid darkgrey;
+  margin: 10px 0px;
+}
+
+.align-info{
+  margin: 30px 5px;
+  border-bottom: 0.2px solid darkred;
+}
+
+.info-box{
+  border: 0.1px solid darkgrey; 
+}
+
+.info-username{
+  color: #660000 !important;
+/*  font-weight: bold;*/
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.search-bar {
+    position: relative;
+/*    height: auto;*/
+/*    padding: 4px 10px 10px;*/
+    right: 0;
+    left: auto;
+/*    width: 100%;*/
+    float: left;
+    z-index: 1002;
+}
+
+.align-profile-pic{
+  height: 140px;
+  width:  140px;
+  border: 2px solid #660000;
+  border-radius: 4px;
+  margin: 30px 0px;
+}
+
+
+
+.profile-label .status {
+  margin-top: 25px;
+  padding-top: 20px;
+  display: flex; display: -ms-flexbox;
+  justify-content: center; -ms-flex-pack: center;
+  border-top: 1px solid rgba(265,265,265,0.25);
+  width: 100%;
+}
+.profile-label .status .set {
+  display: block;
+  padding: 0 10px;
+  position: relative;
+  width: 50%;
+}
+
+.name-t {
+    border-top: 1px solid rgba(0,0,0,0.17);
+    display: block;
+    padding: 6px 0 0;
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+.align-count-info{
+  display: table-cell;
+  border-right:  1px solid #660000;
+}
+
+
+.extra-info{
+  border-bottom: 1px solid #660000; 
+  display: table;
+  width: 100%;
+  padding: 10px;
+  margin: 0px 0px 30px 0px;
+}
+
+.count-txt{
+  font-size: 15px;
+  font-weight: initial;
+  border-top: 1px solid #660000;
+  margin: 20px 0px
+}
+
+.align-followed-info{
+  display: table-cell;
+}
+
+.count-info{
+  font-weight: bold;
+  font-size: 20px;
+}
+.feed-heading{
+  margin: 20px 0px;
+  font-weight: bold;
+  font-size: 40px; 
+  color: #660000;
+  border-bottom: 1px solid #660000;
+}
+
+.display-pic{
+  height: 320px;
+  width:  100%;
+  margin: 5px 0px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.img-box{
+  margin: 20px 10px;
+  border: 1px solid black;
+}
+
+.image-user{
+  float: left;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0px 10px;
+  color: #660000;
+}
+
+
+.img-location{
+  float: right;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0px 10px; 
+  color: #660000;
+}
+
+
+.like-comment-count{
+  font-size: 15px;
+  font-weight: bold;
+  color: #660000; 
+}
+
+.like-count-msg{
+  margin: 0px 20px;
+}
+
+
+.caption-txt{
+  border-bottom: 1px solid black;
+}
+
+
+
+.display-pic:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+.modal{
+  overflow: auto !important;
+}
+
+
+.load_more-btn{
+  width: 100%;
+  background-color: #660000 !important;
+  color: white !important;
+  margin-bottom: 20px !important;
+}
+
+
+.navbar-default .navbar-nav>li>a {
+  color: darkred !important;
+}

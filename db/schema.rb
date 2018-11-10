@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_13_131748) do
+ActiveRecord::Schema.define(version: 2018_11_10_105735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,18 @@ ActiveRecord::Schema.define(version: 2018_10_13_131748) do
     t.integer "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "debtors", force: :cascade do |t|
+    t.string "county", null: false
+    t.string "name", null: false
+    t.string "address", null: false
+    t.string "city", null: false
+    t.string "postal_code", null: false
+    t.bigint "claim_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["claim_id"], name: "index_debtors_on_claim_id"
   end
 
   create_table "educations", force: :cascade do |t|

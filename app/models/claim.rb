@@ -8,6 +8,7 @@ class Claim < ApplicationRecord
   has_many_attached :documents
   has_many          :bids
   has_many          :request_for_proposals
+  has_one           :debtor
   ###########################################################################
   #validations
   validates :amount, :identifier, :pending_since, :status,

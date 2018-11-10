@@ -19,6 +19,7 @@ gem 'omniauth-facebook'
 gem "azure-storage", require: false
 gem 'ffaker'
 gem 'factory_bot_rails'
+gem 'i18n-js'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
