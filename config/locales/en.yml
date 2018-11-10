@@ -1,6 +1,6 @@
 en:
   app:
-    name:                 "Debt Collection"
+    name:                 "DebtCollection"
     welcome_msg:          "Welcome to Debt Collection"
     sign_in:              "Log In"
     enter_user_name:      "Choose User Name"
@@ -19,6 +19,7 @@ en:
     amount:               "Amount"
     status:               "Status"
     county:               "County"
+    home:                 "Home"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"

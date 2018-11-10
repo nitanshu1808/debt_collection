@@ -4,7 +4,7 @@
 }
 
 .app-name{
-  color: darkred !important;
+  color: #330000 !important;
   font-weight: bold;
   font-size: 20px;
 }
@@ -13,15 +13,15 @@
   align-self: right !important;
 }
 .login-btn{
-  color: darkred !important;
-  border-color: darkred !important;
+  color: #330000 !important;
+  border-color: #330000 !important;
 }
 
 .welcm-msg{
-  color: darkred !important;
+  color: #330000 !important;
   font-weight: bold;
   font-size: 70px;
-  border-bottom: 0.2px solid darkred;
+  border-bottom: 0.2px solid #330000;
 }
 
 .align-data{
@@ -33,7 +33,7 @@
 }
 
 .login-form-heading{
-  color: darkred;
+  color: #330000;
 }
 
 .or-line span {
@@ -103,17 +103,17 @@
 }
 
 .instruction_msg{
-  color: darkred !important;
+  color: #330000 !important;
   font-weight: bold;
   font-size: 70px;
 }
 
 .welcome_user_msg{
   margin: 70px 0px;
-  color: darkred !important;
+  color: #330000 !important;
   font-weight: bold;
   font-size: 70px;
-  border-bottom: 0.2px solid darkred;
+  border-bottom: 0.2px solid #330000;
 }
 
 .align-login{
@@ -121,10 +121,10 @@
 }
 
 .login-frm-hdr{
-  color: darkred;
+  color: #330000;
   font-size: 35px;
   margin: 10px 0px !important;
-  outline: 0.1px solid darkred;
+  outline: 0.1px solid #330000;
   padding: 20px 0px;
 }
 
@@ -155,7 +155,7 @@
 
 .align-info{
   margin: 30px 5px;
-  border-bottom: 0.2px solid darkred;
+  border-bottom: 0.2px solid #330000;
 }
 
 .info-box{
@@ -164,18 +164,14 @@
 
 .info-username{
   color: #660000 !important;
-/*  font-weight: bold;*/
   font-size: 20px;
   font-family: sans-serif;
 }
 
 .search-bar {
     position: relative;
-/*    height: auto;*/
-/*    padding: 4px 10px 10px;*/
     right: 0;
     left: auto;
-/*    width: 100%;*/
     float: left;
     z-index: 1002;
 }
@@ -396,5 +392,16 @@
 
 
 .navbar-default .navbar-nav>li>a {
-  color: darkred !important;
+  color: #330000 !important;
+  font-size: 15px !important;
+}
+
+.app-name{
+  color: #330000 !important;
+  font-weight: bold;
+}
+
+.vl {
+  border-left: 1px solid #330000;
+  height: 50px;
 }
