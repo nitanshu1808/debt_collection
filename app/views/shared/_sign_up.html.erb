@@ -1,0 +1,21 @@
+<%= form_for @user, as: :user, url: user_registration_path, method: :post, html: {remote: true} do |f| %>
+    <div class="or-line"><span><%= I18n.t("app.or") %></span></div>
+
+    <%= facebook_button %>
+
+    <%= f.hidden_field :type %>
+
+    <%= f.text_field :email, :label => false, placeholder: I18n.t("app.enter_email") + " *", autocomplete: "off", class: "form-control align-field", "data-validate-error": true, "data-error-msg": f.object.errors[:email][0] %>
+
+    <%= f.text_field :user_name, :label => false, placeholder: I18n.t("app.enter_username") + " *", autocomplete: "off", class: "form-control align-field", "data-validate-error": true, "data-error-msg": f.object.errors[:user_name][0] %>
+
+    <%= f.text_field :name, :label => false, placeholder: I18n.t("app.enter_fullname") + " *", autocomplete: "off", class: "form-control align-field", "data-validate-error": true, "data-error-msg": f.object.errors[:name][0] %>
+
+    <%= f.password_field :password, :label => false, autocomplete: "off", placeholder: I18n.t("app.enter_password") + " *", class: "form-control align-field", "data-validate-error": true, "data-error-msg": f.object.errors[:password][0]  %>
+
+    <div class="pull-left req-text">
+      *<%= I18n.t("app.required")%>
+    </div>
+    <p class="agree-to-use"> <%= I18n.t("app.agreement") %> <%= link_to I18n.t("app.privacy_policy"), "javascript:void(0)" %> and <%= link_to I18n.t("app.tos"), "javascript:void(0)" %>.</p>
+    <%= f.submit I18n.t("app.get_started"), class: "submit-btn" %>
+<% end %>

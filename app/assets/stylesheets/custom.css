@@ -4,7 +4,7 @@
 }
 
 .app-name{
-  color: #330000 !important;
+  color: #4A0000 !important;
   font-weight: bold;
   font-size: 20px;
 }
@@ -13,15 +13,15 @@
   align-self: right !important;
 }
 .login-btn{
-  color: #330000 !important;
-  border-color: #330000 !important;
+  color: #4A0000 !important;
+  border-color: #4A0000 !important;
 }
 
 .welcm-msg{
-  color: #330000 !important;
+  color: #4A0000 !important;
   font-weight: bold;
   font-size: 70px;
-  border-bottom: 0.2px solid #330000;
+  border-bottom: 0.2px solid #4A0000;
 }
 
 .align-data{
@@ -33,7 +33,7 @@
 }
 
 .login-form-heading{
-  color: #330000;
+  color: #4A0000;
 }
 
 .or-line span {
@@ -45,7 +45,7 @@
   margin: 10px 0px;
 }
 
-.insta-logo{
+.facebook-logo{
   width: 100%;
   height: 60px;
   margin: 10px 0px;
@@ -63,14 +63,16 @@
   font-size: 15px;
   margin: 0px 0px 20px 0px;
   float: left;
+  color: #4A0000;
 }
 
 
 .submit-btn{
   width: 100%;
   height: 40px;
-  background-color: #660000;
+  background-color: #4A0000;
   color: white;
+  font-weight: bold;
 }
 
 .req-text {
@@ -83,11 +85,12 @@
   float: left !important;
 }
 .custom-logo{
-  height: 300px;
-  width: 300px;
+  height: 320px;
+  width: 320px;
   border-style: solid;
   border-width: 3px;
   border-color: whitesmoke;
+  margin: 50px 13px;
 }
 .error{
   color: red  !important;
@@ -103,17 +106,17 @@
 }
 
 .instruction_msg{
-  color: #330000 !important;
+  color: #4A0000 !important;
   font-weight: bold;
   font-size: 70px;
 }
 
 .welcome_user_msg{
   margin: 70px 0px;
-  color: #330000 !important;
+  color: #4A0000 !important;
   font-weight: bold;
   font-size: 70px;
-  border-bottom: 0.2px solid #330000;
+  border-bottom: 0.2px solid #4A0000;
 }
 
 .align-login{
@@ -121,17 +124,17 @@
 }
 
 .login-frm-hdr{
-  color: #330000;
+  color: #4A0000;
   font-size: 35px;
   margin: 10px 0px !important;
-  outline: 0.1px solid #330000;
+  outline: 0.1px solid #4A0000;
   padding: 20px 0px;
 }
 
 .login-logo{
   height: 70px;
   width: 70px;
-  margin: 10px 0px; 
+  margin: 10px 0px;
 }
 
 .dont-have-account{
@@ -155,11 +158,11 @@
 
 .align-info{
   margin: 30px 5px;
-  border-bottom: 0.2px solid #330000;
+  border-bottom: 0.2px solid #4A0000;
 }
 
 .info-box{
-  border: 0.1px solid darkgrey; 
+  border: 0.1px solid darkgrey;
 }
 
 .info-username{
@@ -216,7 +219,7 @@
 
 
 .extra-info{
-  border-bottom: 1px solid #660000; 
+  border-bottom: 1px solid #660000;
   display: table;
   width: 100%;
   padding: 10px;
@@ -241,7 +244,7 @@
 .feed-heading{
   margin: 20px 0px;
   font-weight: bold;
-  font-size: 40px; 
+  font-size: 40px;
   color: #660000;
   border-bottom: 1px solid #660000;
 }
@@ -274,7 +277,7 @@
   float: right;
   font-size: 15px;
   font-weight: bold;
-  margin: 0px 10px; 
+  margin: 0px 10px;
   color: #660000;
 }
 
@@ -282,7 +285,7 @@
 .like-comment-count{
   font-size: 15px;
   font-weight: bold;
-  color: #660000; 
+  color: #660000;
 }
 
 .like-count-msg{
@@ -336,7 +339,7 @@
 }
 
 /* Add Animation */
-.modal-content, #caption {    
+.modal-content, #caption {
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
     animation-name: zoom;
@@ -344,12 +347,12 @@
 }
 
 @-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)} 
+    from {-webkit-transform:scale(0)}
     to {-webkit-transform:scale(1)}
 }
 
 @keyframes zoom {
-    from {transform:scale(0)} 
+    from {transform:scale(0)}
     to {transform:scale(1)}
 }
 
@@ -391,17 +394,47 @@
 }
 
 
-.navbar-default .navbar-nav>li>a {
-  color: #330000 !important;
+.navbar-footer-link, .navbar-default .navbar-nav>li>a {
+  color: #4A0000 !important;
   font-size: 15px !important;
 }
 
 .app-name{
-  color: #330000 !important;
+  color: #4A0000 !important;
   font-weight: bold;
 }
 
 .vl {
-  border-left: 1px solid #330000;
+  border-left: 1px solid #4A0000;
   height: 50px;
+}
+.tag-line{
+  color: #4A0000;
+  font-weight: bold;
+  font-size: 40px;
+  margin: 20px 0px;
+}
+.align-welcm-btn{
+  background-color: #4A0000 !important;
+  border-color: #4A0000 !important;
+  width: 25%;
+  height: 50px;
+  font-size: 22px !important;
+}
+
+.para-msg{
+  margin: 30px 0px;
+  font-size: 30px;
+  color: #4A0000 !important;
+  font-weight: bold;
+}
+.footer{
+  position: fixed;
+  bottom:0;
+  width:100%;
+  height:60px;
+  padding: 1rem;
+}
+#main-content{
+  margin-bottom: 20px;
 }

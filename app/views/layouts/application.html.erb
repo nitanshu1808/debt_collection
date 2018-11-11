@@ -11,11 +11,36 @@
   </head>
 
   <body>
-    <div id="navigation_bar">
-      <%= render 'shared/navbar' %>
+    <div id="main-content">
+      <div id="navigation_bar">
+        <%= render 'shared/navbar' %>
+      </div>
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
     </div>
-    <div class="container-fluid">
-      <%= yield %>
+    <div class="footer">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="<%= root_url %>" class = "navbar-footer-link">
+              <%= I18n.t("app.about_us") %>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#navigation_bar" class = "navbar-footer-link back-to-top">
+              <%= I18n.t("app.back_to_top") %>
+            </a>
+          </li>
+          <li>
+            <a href="<%= root_url %>" class = "vl navbar-footer-link">
+              <%= I18n.t("app.privacy_policy") %>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

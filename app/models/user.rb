@@ -1,10 +1,11 @@
 class User < ApplicationRecord
   #constants
   VALID_EMAIL_REGEX = /\A[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\z/ 
+  USER_TYPE         = %w(business lawyer)
   ##############################################################################
   #devise modules
   devise :database_authenticatable, :registerable,
-         :validatable, :omniauthable
+         :validatable, :omniauthable, :omniauth_providers => [:facebook]
   ################################################################################
   #validations
   validates :email, :user_name, :name, presence: true
@@ -24,4 +25,9 @@ class User < ApplicationRecord
   end
   belongs_to                :employer, class_name: "User", optional: true
   ################################################################################
+  USER_TYPE.each do |user_type|
+    define_method "is_#{user_type}?" do
+      user_type.titleize == self.class.to_s
+    end
+  end
 end

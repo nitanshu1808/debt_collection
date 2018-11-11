@@ -1,0 +1,27 @@
+<div class="container-fluid text-center">
+  <div class="welcm-msg">
+    <span><%= I18n.t("app.sign_up_as", val: check_user_type) %></span>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="container">
+    <div class="row align-data">
+      <div class="col-md-4">
+        <div class="text-center align-logo-img">
+          <figure>
+            <%= image_tag("application_logo.jpg", alt: "Application Logo", class: "img-circle custom-logo") %>
+          </figure>
+        </div>
+      </div>
+      <div class="col-md-5 text-center">
+        <div class="login-form-heading">
+          <h1><%= I18n.t("app.create_account") %></h1>
+        </div>
+        <div id="registration">
+          <%= render 'shared/sign_up' %>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+</div>
