@@ -14,7 +14,7 @@ module HomeHelper
   end
 
   def user_path
-    (params["controller"] == "home" && params["action"] == "index") ? login_path : registration_path
+    (params["controller"] == "sessions" && params["action"] == "new") ? registration_path : login_path
   end
 
   def welcome_user_msg
@@ -44,7 +44,7 @@ module HomeHelper
   end
 
   def registration_path
-    link_to root_path do
+    link_to business_registration_path do
       html_registration_span.html_safe + I18n.t("app.sign_up")
     end
   end

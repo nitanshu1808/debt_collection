@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     root to: 'home#index' #declaring the root path for non authentic users
     get '/business_registration',               to: 'home#business_registration'
     get '/legal_professional_registration',     to: 'home#legal_professional_registration'
+    get '/login',                               to: 'users/sessions#new'
   end
 
   authenticated :user do
