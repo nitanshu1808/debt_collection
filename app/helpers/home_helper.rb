@@ -17,10 +17,6 @@ module HomeHelper
     (params["controller"] == "users/sessions" && params["action"] == "new") ? registration_path : login_path
   end
 
-  def welcome_user_msg
-    link_to I18n.t("app.welcome") + " " + current_user.user_name, root_path  if current_user
-  end
-
   def display_user_img
     if current_user
       content_tag :li do

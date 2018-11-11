@@ -13,10 +13,13 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <%#= display_user_img %>
+      <% if current_user %>
       <li>
-        <%= welcome_user_msg %>
+        <%= link_to root_url do %>
+          <%= I18n.t("app.welcome") + " " + current_user.user_name %>
+        <% end %>
       </li>
+      <% end %>
       <li>
         <%= login_logout_path %>
       </li>

@@ -15,9 +15,4 @@ class Users::SessionsController < Devise::SessionsController
     params.require(:user).permit(:email, :password)
   end
 
-  def sign_in_and_redirect
-    sign_in(resource_name, resource)
-    redirect_to identify_user_path, notice: I18n.t("devise.sessions.signed_in")
-  end
-
 end
