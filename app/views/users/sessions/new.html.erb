@@ -1,0 +1,32 @@
+<div class="container-fluid text-center">
+  <div class="container">
+    <div class="login-form-heading align-login">
+      <h1><%= I18n.t("app.login_to_your_account") %></h1>
+    </div>
+
+    <div class="row text-center">
+
+      <div class="col-md-4"></div>
+      <div class="col-md-4 login-div">
+        <div class="login-frm-hdr">
+          <%= image_tag("application_logo.jpg", alt: "logo", class: 'img-circle login-logo') %>
+          <%= I18n.t("app.name") %>
+        </div>
+
+        <div id="login">
+          <%= render 'shared/sign_in' %>
+        </div>
+
+        <div class="or-line"><span><%= I18n.t("app.or") %></span></div>
+
+        <%= facebook_button %>
+
+        <div class="dont-have-account">
+          <%= I18n.t("app.dont_have_account") %>
+          <%= link_to I18n.t("app.sign_up"), business_registration_path, class: "form-signup-btn" %>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+</div>

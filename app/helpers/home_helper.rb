@@ -14,7 +14,7 @@ module HomeHelper
   end
 
   def user_path
-    (params["controller"] == "sessions" && params["action"] == "new") ? registration_path : login_path
+    (params["controller"] == "users/sessions" && params["action"] == "new") ? registration_path : login_path
   end
 
   def welcome_user_msg

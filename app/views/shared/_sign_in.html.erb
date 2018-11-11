@@ -1,0 +1,9 @@
+<%= form_for resource, as: resource_name, url: session_path(resource_name), html: {remote: true} do |f| %>
+
+  <%= f.text_field :email, :label => false, placeholder: I18n.t("app.enter_email") + " *", autocomplete: "off", class: "form-control align-field", "data-validate-error": true, "data-error-msg": f.object.errors[:email][0] %>
+
+  <%= f.password_field :password, :label => false, autocomplete: "off", placeholder: I18n.t("app.enter_password") + " *", class: "form-control align-field", "data-validate-error": true, "data-error-msg": f.object.errors[:password][0]  %>
+
+  <%= f.submit I18n.t("app.sign_in"), class: "form-submit" %>
+
+<% end %>

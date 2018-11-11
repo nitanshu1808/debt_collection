@@ -37,7 +37,7 @@ group :development do
   gem 'brakeman'
   gem 'deadweight'
   gem 'rails-erd'
-  gem "figaro"
+  gem 'figaro'
 end
 
 group :test do
