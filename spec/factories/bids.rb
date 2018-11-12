@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :bid do
     association :lawyer
     association :claim
-    amount                { FFaker::AddressCA.building_number }
+    amount                { claim.amount/2 }
     terms_of_service      { FFaker::Book.description }
   end
 end
