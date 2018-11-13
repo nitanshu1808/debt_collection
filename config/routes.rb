@@ -9,11 +9,11 @@ Rails.application.routes.draw do
   end
 
   authenticated :user do
-    root to: 'home#feeds' #declaring the root path for authentic users
-    resources :legal_professionals, :business
-
     get '/legal_professional_complete_profile', to: 'legal_professionals#complete_profile'
     get '/business_complete_profile',           to: 'business#complete_profile'
+
+    resources :legal_professionals, only: :update
+    resources :business,            only: :create
   end
 
 end

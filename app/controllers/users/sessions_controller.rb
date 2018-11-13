@@ -5,7 +5,7 @@ class Users::SessionsController < Devise::SessionsController
     if @user && @user.valid_password?(login_params["password"])
       sign_in_and_redirect
     else
-      @user = @user || User.new(login_params)
+      @user = User.new(login_params)
       @user.errors.add(:password, I18n.t('user.wrong_credentials'))
     end
   end

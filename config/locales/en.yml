@@ -49,6 +49,8 @@ en:
     welcome:               "Welcome"
     sign_up_as:            "Sign Up As %{val}"
     facebook:              "Facebook"
+    unauthorize:           "Unauthorize Access"
+    browse:                "Browse"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"
