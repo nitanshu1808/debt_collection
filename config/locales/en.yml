@@ -51,6 +51,7 @@ en:
     facebook:              "Facebook"
     unauthorize:           "Unauthorize Access"
     browse:                "Browse"
+    edit_profile_picture:  "Edit Profile Picture"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"
