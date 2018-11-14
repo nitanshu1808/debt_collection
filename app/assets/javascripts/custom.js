@@ -39,4 +39,20 @@ $(document).on('turbolinks:load', function() {
     $('.flash-msg').slideUp(800);
   }, 1500);
 
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('.avatar').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $("#lawyer_profile_image").change(function(){
+      readURL(this);
+  });
+
 });

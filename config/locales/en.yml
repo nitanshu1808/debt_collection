@@ -52,6 +52,9 @@ en:
     unauthorize:           "Unauthorize Access"
     browse:                "Browse"
     edit_profile_picture:  "Edit Profile Picture"
+    complete_profile:      "Complete Profile"
+    enter_description:     "Enter Description"
+    enter_contact:         "Enter Contact Number"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"

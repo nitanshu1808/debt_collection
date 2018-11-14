@@ -436,5 +436,28 @@
   padding: 1rem;
 }
 #main-content{
-  margin-bottom: 20px;
+  margin-bottom: 120px;
+}
+
+.profile_form{
+  margin-top: 30px;
+}
+.complete-profile-msg{
+  font-size: 40px;
+  color: #4A0000 !important;
+  font-weight: bold; 
+}
+.align-row{
+  margin: 50px 100px;
+}
+
+.complete-profile-btn{
+  width: 40%;
+  height: 40px;
+  background-color: #4A0000;
+  color: white;
+  font-weight: bold;
+}
+.align-text-area{
+  margin: 50px 115px; 
 }
