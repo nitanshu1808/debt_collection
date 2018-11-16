@@ -9,4 +9,20 @@ class Lawyer < User
   has_and_belongs_to_many :collection_areas, foreign_key: 'user_id'
   has_many :request_for_proposals
   ####################################################################################
+
+  #instance methods
+  def profile_completion_error
+    message = ""
+
+    if work_experiences.blank?
+      message << I18n.t("app.work_experience")
+    end
+
+    if educations.blank?
+      message << " and " if work_experiences.blank?
+      message << I18n.t("app.education")
+    end
+
+    I18n.t("error.please_add", val: message)
+  end
 end

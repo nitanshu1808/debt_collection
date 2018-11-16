@@ -53,8 +53,10 @@ en:
     browse:                "Browse"
     edit_profile_picture:  "Edit Profile Picture"
     complete_profile:      "Complete Profile"
-    enter_description:     "Enter Description"
+    enter_description:     "Enter Description (Maximum 1000 characters )"
     enter_contact:         "Enter Contact Number"
+    work_experience:       "Work Experience"
+    education:             "Education Qualification"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"
@@ -63,8 +65,10 @@ en:
     valid_email:          "Invalid Email. Please enter a valid email."
     name:                 "Name"
     character_validation: "%{val} must be less than %{num} characters"
-    enter_val:            "Please enter a %{val}."
+    enter_val:            "%{val} cannot be left blank."
     email:                "Email"
+    description:          "Description"
+    contact_number:       "Contact Number"
   conversation:
     sndr_rcvr_unique:     "Sender and Receiver cannot be same"
   collection_area:
@@ -77,3 +81,6 @@ en:
     additional_desciption: "Additional Description"
     pending_since:        "Pending Since"
     identifier:           "Identifier"
+  error:
+    complete_profile:     "Error Updating Profile"
+    please_add:           "Please add %{val} in order to complete the profile"

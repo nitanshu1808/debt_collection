@@ -461,3 +461,6 @@
 .align-text-area{
   margin: 50px 115px; 
 }
+.validation-error{
+  margin: 10px 0px;
+}

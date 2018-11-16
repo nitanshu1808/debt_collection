@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  $("#new_user").validate({
+  $("#new_user, #edit_user").validate({
     rules: {
       "user[user_name]": {
         required: true,
@@ -14,7 +14,14 @@ $(document).on('turbolinks:load', function() {
       },
       "user[password]":{
         required: true
+      },
+      "user[description]":{
+        required: true
+      },
+      "user[contact_number]":{
+        required: true
       }
+
     },
     messages: {
       "user[user_name]": {
@@ -30,6 +37,12 @@ $(document).on('turbolinks:load', function() {
       },
       "user[email]": {
           required:  I18n.t("user.enter_val", {val: I18n.t("user.email")})
+      },
+      "user[description]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("user.description")})
+      },
+      "user[contact_number]":{
+          required: I18n.t("user.enter_val", {val: I18n.t("user.contact_number") })
       }
 
     }
@@ -37,7 +50,7 @@ $(document).on('turbolinks:load', function() {
 
   setTimeout(function(){
     $('.flash-msg').slideUp(800);
-  }, 1500);
+  }, 3000);
 
   function readURL(input) {
     if (input.files && input.files[0]) {
@@ -51,7 +64,7 @@ $(document).on('turbolinks:load', function() {
     }
   }
 
-  $("#lawyer_profile_image").change(function(){
+  $("#user_profile_image").change(function(){
       readURL(this);
   });
 

@@ -9,11 +9,13 @@ Rails.application.routes.draw do
   end
 
   authenticated :user do
+    # root to: 'home#index' #declaring the root path for non authentic users
     get '/legal_professional_complete_profile', to: 'legal_professionals#complete_profile'
     get '/business_complete_profile',           to: 'business#complete_profile'
 
     resources :legal_professionals, only: :update
     resources :business,            only: :create
+    resources :claims
   end
 
 end
