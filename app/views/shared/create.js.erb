@@ -1,0 +1,8 @@
+<% if @work_experience.errors.any? %>
+  $(".modal-body").html('<%= j(render identify_model_form ) %>')
+<% else %>
+  $('<%= identify_list_class %>').html('<%= j(render identify_partial ) %>')
+  $("#myModalLabel").html("");
+  $(".modal-body").html("");
+  $("#myModal").modal('hide');
+<% end %>

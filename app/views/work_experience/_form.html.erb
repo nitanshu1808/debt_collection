@@ -1,0 +1,56 @@
+<div class="work-experience-form text-left">
+  <%= form_for(@work_experience, url: legal_professional_work_experience_index_path, remote: true, html: {class: "form-horizontal"})  do |f| %>
+    <div class="form-group">
+      <%= f.label :company_name, I18n.t("work_experience.company_name"), class: "control-label col-sm-3" %>
+      <div class="col-sm-9">
+        <%= f.text_field :company_name, placeholder: I18n.t("app.enter_company_name"), size: 30, class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:company_name][0] %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :designation, I18n.t("work_experience.designation"), class: "control-label col-sm-3" %>
+      <div class="col-sm-9">
+        <%= f.text_field :designation, placeholder: I18n.t("app.enter_designation"), size: 30, class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:designation][0]  %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :responsibilities, I18n.t("work_experience.responsibilities"), class: "control-label col-sm-3" %>
+      <div class="col-sm-9">
+        <%= f.text_area :responsibilities, placeholder: I18n.t("app.enter_responsibilities"), class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:responsibilities][0], rows: 5, maxlength: 1000  %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :location, I18n.t("work_experience.location"), class: "control-label col-sm-3" %>
+      <div class="col-sm-9">
+        <%= f.text_field :location, placeholder: I18n.t("app.enter_location"), size: 30, class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:location][0]  %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :from_date, I18n.t("work_experience.from_date"), class: "control-label col-sm-3" %>
+      <div class="col-sm-9">
+        <%= f.date_field :from_date, placeholder: I18n.t("app.enter_from_date"), size: 30, class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:from_date][0]  %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :to_date, I18n.t("work_experience.to_date"), class: "control-label col-sm-3" %>
+      <div class="col-sm-9">
+        <%= f.date_field :to_date, placeholder: I18n.t("app.enter_to_date"), size: 30, class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:to_date][0]  %>
+      </div>
+    </div>
+
+    <div class="checkbox">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <%= f.label :currently_working do %>
+          <%= f.check_box :currently_working %>
+          <%= I18n.t("work_experience.currently_working") %>
+        <% end %>  
+      </div>
+    </div>
+
+    <div class="form-group"> 
+      <div class="col-sm-offset-2 col-sm-10 text-center">
+        <%= f.submit I18n.t("app.submit"), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

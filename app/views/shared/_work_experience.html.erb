@@ -1,0 +1,69 @@
+<div class="panel panel-default work_experience">
+  <% work_exp = @lawyer.work_experiences %>
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><%= I18n.t("app.work_experience")+ " *" %></a>
+      <%= link_to new_legal_professional_work_experience_url(@lawyer), class: "btn btn-danger btn-sm work-exp-btn", "data-remote" => true  do %>
+        <span class=" glyphicon glyphicon-plus-sign"></span>
+        <%= I18n.t("app.create_work_exp") %>
+      <% end %>
+    </h4>
+  </div>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
+      <% if work_exp.present? %>
+        <% work_exp.each do |exp| %>
+          <div class="row pretify-exp">
+            <div class="col-md-4">
+              <%= label_tag I18n.t("work_experience.company_name") %>  
+            </div>
+            <div class="col-md-8">
+              <%= exp.company_name %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <%= label_tag I18n.t("work_experience.designation") %>  
+            </div>
+            <div class="col-md-8">
+              <%= exp.designation %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <%= label_tag I18n.t("work_experience.responsibilities") %>
+            </div>
+            <div class="col-md-8">
+              <%= exp.responsibilities %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <%= label_tag I18n.t("app.from_date") %>  
+            </div>
+            <div class="col-md-8">
+              <%= modify_date(exp.from_date) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <%= label_tag I18n.t("app.to_date") %>  
+            </div>
+            <div class="col-md-8">
+              <%= is_currently_working(exp) %>
+            </div>
+          </div>
+          <div class="complete-profile-sprtn-line"></div>
+        <% end %>
+      <% else %>
+        <div class="text-center">
+          <%= I18n.t("error.no_record", val: I18n.t("app.work_experience")) %>  
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

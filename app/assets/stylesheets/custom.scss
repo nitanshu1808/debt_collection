@@ -99,12 +99,6 @@
   margin: 1px 0px 10px 0px;
 }
 
-.validation-error{
-  color: red;
-  float: left;
-  margin: -15px 0px 10px 0px;
-}
-
 .instruction_msg{
   color: #4A0000 !important;
   font-weight: bold;
@@ -303,48 +297,7 @@
   opacity: 0.7;
 }
 
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
 
-/* Modal Content (image) */
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
-
-/* Caption of Modal Image */
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-}
-
-/* Add Animation */
-.modal-content, #caption {
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-}
 
 @-webkit-keyframes zoom {
     from {-webkit-transform:scale(0)}
@@ -372,17 +325,6 @@
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-    .modal-content {
-        width: 100%;
-    }
-}
-
-.modal{
-  overflow: auto !important;
 }
 
 
@@ -461,6 +403,28 @@
 .align-text-area{
   margin: 50px 115px; 
 }
+.complete-profile-sprtn-line {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #4A0000;
+    margin: 1em 110px;
+    padding: 0;
+}
+.work-exp-btn{
+  margin-left: 90px;
+  background-color: #4A0000;
+  border-color: #4A0000;
+  color: white !important;
+}
+.close{
+  color: #4A0000 !important;
+  margin-top: -12px !important;
+}
 .validation-error{
-  margin: 10px 0px;
+  color: red;
+}
+.new_user .validation-error{
+  float: left;
+  margin-top: -20px;
 }

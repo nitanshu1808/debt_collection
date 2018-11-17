@@ -9,4 +9,7 @@ class WorkExperience < ApplicationRecord
   validates :to_date, presence: true, unless: :currently_working?
   validate  :from_to_date_val_comparison, if: Proc.new { |a| !(a.currently_working?) && a.to_date && a.from_date }
   ####################################################################################
+  #scope
+  default_scope { order(created_at: :desc) }
+  ####################################################################################
 end

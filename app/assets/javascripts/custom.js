@@ -68,4 +68,53 @@ $(document).on('turbolinks:load', function() {
       readURL(this);
   });
 
+  $('#myModal').on('click', '.modal-body .work-experience-form',  function() {
+    $("#new_work_experience").validate({
+      rules: {
+        "work_experience[company_name]": {
+          required: true
+        },
+        "work_experience[designation]": {
+          required: true
+        },
+        "work_experience[location]": {
+          required: true
+        },
+        "work_experience[responsibilities]": {
+          required: true
+        },
+        "work_experience[from_date]": {
+          required: true
+        }
+      },
+      messages: {
+        "work_experience[company_name]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("work_experience.company_name")})
+        },
+        "work_experience[designation]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("work_experience.designation")})
+        },
+        "work_experience[location]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("work_experience.location")})
+        },
+        "work_experience[responsibilities]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("work_experience.responsibilities")})
+        },
+        "work_experience[from_date]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("work_experience.from_date")})
+        }
+      }
+    });
+
+    $('#work_experience_currently_working').on('click', function(e){
+      if ($(this).is(":checked")){
+        $('#work_experience_to_date').val("")
+      }
+    });
+
+    $('#work_experience_to_date').on('click change keyup keydown', function(e){
+      $('#work_experience_currently_working').prop('checked', false);
+    })
+
+  });
 });

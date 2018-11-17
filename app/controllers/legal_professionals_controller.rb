@@ -23,8 +23,4 @@ class LegalProfessionalsController < ApplicationController
     redirect_to business_complete_profile_path, notice: I18n.t("app.unauthorize") unless current_user.is_lawyer?
   end
 
-  def find_lawyer
-    @lawyer = Lawyer.find_by(id: params["id"])
-  end
-
 end
