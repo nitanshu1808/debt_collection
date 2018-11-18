@@ -25,4 +25,8 @@ class Lawyer < User
 
     I18n.t("error.please_add", val: message)
   end
+
+  def is_profile_completed?
+    educations.present? && work_experiences.present?
+  end
 end

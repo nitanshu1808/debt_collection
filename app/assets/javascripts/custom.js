@@ -101,10 +101,41 @@ $(document).on('turbolinks:load', function() {
           required:  I18n.t("user.enter_val", {val: I18n.t("work_experience.responsibilities")})
         },
         "work_experience[from_date]": {
-          required:  I18n.t("user.enter_val", {val: I18n.t("work_experience.from_date")})
+          required:  I18n.t("user.enter_val", {val: I18n.t("app.from_date")})
         }
       }
     });
+
+    $("#new_education").validate({
+      rules: {
+        "education[field_of_study]": {
+          required: true
+        },
+        "education[institution]": {
+          required: true
+        },
+        "education[from_date]": {
+          required: true
+        },
+        "education[to_date]": {
+          required: true
+        }
+      },
+      messages: {
+        "education[field_of_study]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("education.field_of_study")})
+        },
+        "education[institution]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("education.institution")})
+        },
+        "education[from_date]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("app.from_date")})
+        },
+        "education[to_date]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("app.to_date")})
+        }
+      }
+    });    
 
     $('#work_experience_currently_working').on('click', function(e){
       if ($(this).is(":checked")){

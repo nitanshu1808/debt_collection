@@ -1,5 +1,5 @@
-FactoryBot.create_list(:lawyer, 20)
-FactoryBot.create_list(:business, 20)
+lawyer   = FactoryBot.create_list(:lawyer, 20)
+business = FactoryBot.create_list(:business, 20)
 
 collection_areas = ["All Types", "Invoice", "Credit Card","Utility",
                     "Medical Bills", "Construction","Student Loans",

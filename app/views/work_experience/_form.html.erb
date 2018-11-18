@@ -25,13 +25,13 @@
       </div>
     </div>
     <div class="form-group">
-      <%= f.label :from_date, I18n.t("work_experience.from_date"), class: "control-label col-sm-3" %>
+      <%= f.label :from_date, I18n.t("app.from_date"), class: "control-label col-sm-3" %>
       <div class="col-sm-9">
         <%= f.date_field :from_date, placeholder: I18n.t("app.enter_from_date"), size: 30, class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:from_date][0]  %>
       </div>
     </div>
     <div class="form-group">
-      <%= f.label :to_date, I18n.t("work_experience.to_date"), class: "control-label col-sm-3" %>
+      <%= f.label :to_date, I18n.t("app.to_date"), class: "control-label col-sm-3" %>
       <div class="col-sm-9">
         <%= f.date_field :to_date, placeholder: I18n.t("app.enter_to_date"), size: 30, class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:to_date][0]  %>
       </div>

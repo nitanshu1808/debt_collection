@@ -13,4 +13,8 @@ module ProfileCompletion
   def find_lawyer
     @lawyer = Lawyer.find_by(id: params["id"] || params["legal_professional_id"])
   end
+
+  def render_template
+    render "shared/#{params["action"]}"
+  end
 end

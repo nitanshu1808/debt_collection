@@ -1,0 +1,39 @@
+<div class="work-experience-form text-left">
+  <%= form_for(@education, url: legal_professional_education_index_path, remote: true, html: {class: "form-horizontal"})  do |f| %>
+    <div class="form-group">
+      <%= f.label :field_of_study, I18n.t("education.field_of_study"), class: "control-label col-sm-3" %>
+      <div class="col-sm-9">
+        <%= f.text_field :field_of_study, placeholder: I18n.t("app.enter_field_of_study"), class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:enter_field_of_study][0] %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :institution, I18n.t("education.institution"), class: "control-label col-sm-3" %>
+      <div class="col-sm-9">
+        <%= f.text_field :institution, placeholder: I18n.t("app.enter_institution"), class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:institution][0]  %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :from_date, I18n.t("app.from_date"), class: "control-label col-sm-3" %>
+      <div class="col-sm-9">
+        <%= f.date_field :from_date, placeholder: I18n.t("app.enter_from_date"), class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:from_date][0]  %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :to_date, I18n.t("app.to_date"), class: "control-label col-sm-3" %>
+      <div class="col-sm-9">
+        <%= f.date_field :to_date, placeholder: I18n.t("app.enter_to_date"), class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:to_date][0]  %>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10 text-center">
+        <%= f.submit I18n.t("app.submit"), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+ 

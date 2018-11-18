@@ -27,17 +27,23 @@
       </div>
       <div class="complete-profile-sprtn-line"></div>
 
-      <div class="row align-row text-left">
+      <div class="row align-text-area">
+        <div class="text-left pretify-exp"><%= I18n.t("app.enter_description") %></div>
+
+        <%= f.text_area :description, :label => false, placeholder: I18n.t("app.enter_description")+ " *", autocomplete: "off", class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:description][0], cols: 20, rows: 5, maxlength: 1000 %>
+      </div>
+
+      <div class="complete-profile-sprtn-line"></div>
+
+      <div class="row align-row text-left work_experience">
         <div class="col-md-6">
           <%= render 'shared/work_experience' %>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 education">
+          <%= render 'shared/education' %>
         </div>
       </div>
 
-      <div class="row align-text-area">
-        <%= f.text_area :description, :label => false, placeholder: I18n.t("app.enter_description")+ " *", autocomplete: "off", class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:description][0], cols: 20, rows: 5, maxlength: 1000 %>
-      </div>
 
       <div class="row align-row">
         <%= f.submit I18n.t("app.complete_profile"), class: 'complete-profile-btn' %>

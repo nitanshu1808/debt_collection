@@ -4,17 +4,13 @@ class WorkExperienceController < ApplicationController
 
   def new
     @work_experience = @lawyer.work_experiences.build
-    render 'shared/new'
+    render_template
   end
 
   def create
-    begin
-      @work_experience = @lawyer.work_experiences.build(work_experience_params)
-      @work_experience.save
-    rescue Exception => e
-      @work_experience.errors.add(:base, e)
-    end
-    render 'shared/create'
+    @work_experience = @lawyer.work_experiences.build(work_experience_params)
+    @work_experience.save
+    render_template
   end
 
   private

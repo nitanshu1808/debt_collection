@@ -1,0 +1,59 @@
+<div class="panel panel-default">
+  <% educations = @lawyer.educations %>
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><%= I18n.t("app.education")+ " *" %></a>
+      <%= link_to new_legal_professional_education_url(@lawyer), class: "btn btn-danger btn-sm work-exp-btn education-btn", "data-remote" => true  do %>
+        <span class=" glyphicon glyphicon-plus-sign"></span>
+        <%= I18n.t("app.create_education") %>
+      <% end %>
+    </h4>
+  </div>
+  <div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
+      <% if educations.present? %>
+        <% educations.each do |education| %>
+          <div class="row pretify-exp">
+            <div class="col-md-4">
+              <%= label_tag I18n.t("education.field_of_study") %>
+            </div>
+            <div class="col-md-8">
+              <%= education.field_of_study %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <%= label_tag I18n.t("education.institution") %>
+            </div>
+            <div class="col-md-8">
+              <%= education.institution %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <%= label_tag I18n.t("app.from_date") %>
+            </div>
+            <div class="col-md-8">
+              <%= modify_date(education.from_date) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <%= label_tag I18n.t("app.to_date") %>
+            </div>
+            <div class="col-md-8">
+              <%= modify_date(education.from_date) %>
+            </div>
+          </div>
+          <div class="complete-profile-sprtn-line"></div>
+        <% end %>
+      <% else %>
+        <div class="text-center">
+          <%= I18n.t("error.no_record", val: I18n.t("app.education")) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

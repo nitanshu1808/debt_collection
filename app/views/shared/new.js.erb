@@ -1,3 +1,3 @@
-$("#myModalLabel").html("<%= I18n.t('app.work_experience') %>")
+$("#myModalLabel").html("<%= identify_modal_header %>")
 $(".modal-body").html('<%= j(render identify_model_form ) %>')
 $("#myModal").modal('show');

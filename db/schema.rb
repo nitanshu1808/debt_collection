@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_17_115834) do
+ActiveRecord::Schema.define(version: 2018_11_11_163011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,11 +82,6 @@ ActiveRecord::Schema.define(version: 2018_11_17_115834) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "collection_areas_lawyers", id: false, force: :cascade do |t|
-    t.bigint "collection_area_id", null: false
-    t.bigint "lawyer_id", null: false
-  end
-
   create_table "collection_areas_users", id: false, force: :cascade do |t|
     t.bigint "collection_area_id", null: false
     t.bigint "user_id", null: false
@@ -115,8 +110,8 @@ ActiveRecord::Schema.define(version: 2018_11_17_115834) do
     t.integer "lawyer_id", null: false
     t.string "field_of_study", null: false
     t.string "institution", null: false
-    t.string "from_date", null: false
-    t.string "to_date"
+    t.datetime "from_date"
+    t.datetime "to_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

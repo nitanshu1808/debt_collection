@@ -20,4 +20,12 @@ module ApplicationHelper
   def identify_partial
     "shared/#{params["controller"]}"
   end
+
+  def identify_modal_header
+    I18n.t("app.#{params["controller"]}")
+  end
+
+  def identify_instance_variable
+    instance_variable_get"@#{params["controller"]}"
+  end
 end

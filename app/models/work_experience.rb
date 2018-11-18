@@ -1,6 +1,7 @@
 class WorkExperience < ApplicationRecord
   #module for date comparison
   include DateComparison
+  include LawyerProfile
   ####################################################################################
   #associations
   belongs_to :lawyer
@@ -12,4 +13,6 @@ class WorkExperience < ApplicationRecord
   #scope
   default_scope { order(created_at: :desc) }
   ####################################################################################
+  #callbacks
+  after_create :verify_user_profile_completion
 end

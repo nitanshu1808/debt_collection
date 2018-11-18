@@ -1,4 +1,4 @@
-<% if @work_experience.errors.any? %>
+<% if identify_instance_variable.errors.any? %>
   $(".modal-body").html('<%= j(render identify_model_form ) %>')
 <% else %>
   $('<%= identify_list_class %>').html('<%= j(render identify_partial ) %>')

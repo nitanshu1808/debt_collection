@@ -10,7 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.references  :employer
       t.boolean     :profile_completed,   default: false
       t.text        :description
-      t.integer     :contact_number
+      t.string     :contact_number
       t.timestamps
     end
 
