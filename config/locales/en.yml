@@ -78,6 +78,11 @@ en:
     select_collection_area: "Please select collection area"
     field:                   "Field"
     personal_details:       "Personal Details"
+    address:                "Address"
+    enter_address:          "Enter Your Address"
+    enter_city:             "Enter City"
+    enter_postal_code:        "Enter Postal Code"
+    enter_county:           "Enter County"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"
@@ -113,5 +118,10 @@ en:
     location:             "Location"
     currently_working:    "Currently Working"
   education:
-      field_of_study:     "Field of Study"
-      institution:        "Institution"
+    field_of_study:     "Field of Study"
+    institution:        "Institution"
+  address:
+    city:               "City"
+    postal_code:        "Postal Code"
+    county:             "County"
+    street:             "Street Address"
