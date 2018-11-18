@@ -17,7 +17,9 @@ Rails.application.routes.draw do
       resources :education,       only: [:new, :create]
     end
 
-    resources :business,            only: :create
+    resources :business, only: [:update, :show] do
+
+    end
     resources :claims
   end
 

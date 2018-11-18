@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="hero-image lawyer-coverpic">
-      <%= image_tag "lawyer_pic.jpg", alt: "Lawyer Image", class: "avatar" %>
+    <div class="hero-image <%= identify_user_cover_pic %>">
+      <%= image_tag identify_user_profile_pic, class: "avatar" %>
       <div class="field">
         <%= f.label :profile_image, class: "browse-btn" do %>
           <span class="glyphicon glyphicon-edit browse-icon">

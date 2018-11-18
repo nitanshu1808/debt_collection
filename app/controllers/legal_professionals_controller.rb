@@ -2,12 +2,13 @@ class LegalProfessionalsController < ApplicationController
   include ProfileCompletion
   #This module support for profile completion of legal professionals and Business
 
-  before_action :check_user
+  before_action :check_user, except:  :complete_profile
   before_action :find_lawyer, except: :complete_profile
 
   def complete_profile
     @lawyer = current_user
     @lawyer.collection_areas.build
+    @lawyer.address || @lawyer.build_address
   end
 
   def update

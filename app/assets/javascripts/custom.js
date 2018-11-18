@@ -20,6 +20,18 @@ $(document).on('turbolinks:load', function() {
       },
       "user[contact_number]":{
         required: true
+      },
+      "user[address_attributes][name]":{
+        required: true
+      },
+      "user[address_attributes][city]":{
+        required: true
+      },
+      "user[address_attributes][postal_code]":{
+        required: true
+      },
+      "user[address_attributes][county]":{
+        required: true
       }
 
     },
@@ -43,8 +55,19 @@ $(document).on('turbolinks:load', function() {
       },
       "user[contact_number]":{
           required: I18n.t("user.enter_val", {val: I18n.t("user.contact_number") })
+      },
+      "user[address_attributes][name]":{
+        required: I18n.t("user.enter_val", {val: I18n.t("app.address") })
+      },
+      "user[address_attributes][city]":{
+        required: I18n.t("user.enter_val", {val: I18n.t("address.city") })
+      },
+      "user[address_attributes][postal_code]":{
+        required: I18n.t("user.enter_val", {val: I18n.t("address.postal_code") })
+      },
+      "user[address_attributes][county]":{
+        required: I18n.t("user.enter_val", {val: I18n.t("address.county") })
       }
-
     }
   });
 

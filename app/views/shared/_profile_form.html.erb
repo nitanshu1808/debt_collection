@@ -1,0 +1,28 @@
+<div class="complete-profile-msg"><%= I18n.t("app.complete_profile") %></div>
+
+<div class="row align-row">
+  <div class="col-md-6">
+    <%= f.text_field :email, :label => false, placeholder: I18n.t("app.enter_email") + " *", autocomplete: "off", class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:email][0] %>
+  </div>
+
+  <div class="col-md-6">
+    <%= f.text_field :user_name, :label => false, placeholder: I18n.t("app.enter_username") + " *", autocomplete: "off", class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:user_name][0] %>
+  </div>
+</div>
+
+<div class="row align-row">
+  <div class="col-md-6">
+    <%= f.text_field :name, :label => false, placeholder: I18n.t("app.enter_fullname") + " *", autocomplete: "off", class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:name][0] %>
+  </div>
+
+  <div class="col-md-6">
+    <%= f.phone_field :contact_number, :label => false, placeholder: I18n.t("app.enter_contact")+ " *" , autocomplete: "off", class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:contact_number][0] %>
+  </div>
+</div>
+<div class="complete-profile-sprtn-line"></div>
+
+<div class="row align-text-area">
+  <div class="text-left pretify-exp"><%= I18n.t("app.enter_description") %></div>
+
+  <%= f.text_area :description, :label => false, placeholder: I18n.t("app.enter_description")+ " *", autocomplete: "off", class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:description][0], cols: 20, rows: 5, maxlength: 1000 %>
+</div>

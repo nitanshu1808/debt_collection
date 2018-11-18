@@ -1,0 +1,21 @@
+<%= f.fields_for :address do |field| %>
+  <div class="complete-profile-msg"><%= I18n.t("app.address") %></div>
+  <div class="row align-row">
+    <div class="col-md-6">
+      <%= field.text_field :name, :label => false, placeholder: I18n.t("app.enter_address") + " *", autocomplete: "off", class: "form-control", "data-validate-error": true, "data-error-msg": field.object.errors[:name][0] %>
+    </div>
+
+    <div class="col-md-6">
+      <%= field.text_field :city, :label => false, placeholder: I18n.t("app.enter_city")+ " *" , autocomplete: "off", class: "form-control", "data-validate-error": true, "data-error-msg": field.object.errors[:city][0] %>
+    </div>
+  </div>
+  <div class="row align-row">
+    <div class="col-md-6">
+      <%= field.text_field :postal_code, :label => false, placeholder: I18n.t("app.enter_postal_code") + " *", autocomplete: "off", class: "form-control", "data-validate-error": true, "data-error-msg": field.object.errors[:postal_code][0] %>
+    </div>
+
+    <div class="col-md-6">
+      <%= field.text_field :county, :label => false, placeholder: I18n.t("app.enter_county")+ " *" , autocomplete: "off", class: "form-control", "data-validate-error": true, "data-error-msg": field.object.errors[:county][0] %>
+    </div>
+  </div>
+<% end %>

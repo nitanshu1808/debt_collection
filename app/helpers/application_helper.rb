@@ -28,4 +28,13 @@ module ApplicationHelper
   def identify_instance_variable
     instance_variable_get"@#{params["controller"]}"
   end
+
+  def identify_user_cover_pic
+    current_user.is_lawyer? ? "lawyer-coverpic" : "business-coverpic"
+  end
+
+  def identify_user_profile_pic
+    current_user.is_lawyer? ? "lawyer_pic.jpg" : "start_up.png"
+  end
+
 end

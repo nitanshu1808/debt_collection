@@ -27,6 +27,7 @@ class User < ApplicationRecord
 
   #nested_attributes
   accepts_nested_attributes_for :provider
+  accepts_nested_attributes_for :address
 
 
   USER_TYPE.each do |user_type|
