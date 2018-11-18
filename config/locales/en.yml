@@ -74,6 +74,10 @@ en:
     submit:                 "Submit"
     enter_field_of_study:   "Enter Field of Study"
     enter_institution:      "Enter Institution"
+    collection_area:        "Collection Area"
+    select_collection_area: "Please select collection area"
+    field:                   "Field"
+    personal_details:       "Personal Details"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"

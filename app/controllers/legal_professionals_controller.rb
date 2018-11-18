@@ -3,10 +3,11 @@ class LegalProfessionalsController < ApplicationController
   #This module support for profile completion of legal professionals and Business
 
   before_action :check_user
-  before_action :find_lawyer, only: :update
+  before_action :find_lawyer, except: :complete_profile
 
   def complete_profile
     @lawyer = current_user
+    @lawyer.collection_areas.build
   end
 
   def update
@@ -16,6 +17,10 @@ class LegalProfessionalsController < ApplicationController
       flash.now[:error] = profile_completion_error_msg
       render 'complete_profile'
     end
+  end
+
+  def show
+    lawyer_details
   end
 
   private

@@ -3,7 +3,9 @@ module ProfileCompletion
 
   private
   def user_params
-    params.require(:user).permit(:profile_image, :id, :email, :user_name, :name, :contact_number, :description)
+    params.require(:user).permit(:profile_image, :id, :email,
+                        :user_name, :name, :contact_number,
+                        :description, collection_area_ids: [])
   end
 
   def profile_completion_error_msg
@@ -16,5 +18,11 @@ module ProfileCompletion
 
   def render_template
     render "shared/#{params["action"]}"
+  end
+
+  def lawyer_details 
+    @educations       =  @lawyer.educations
+    @work_experience  =  @lawyer.work_experiences
+    @collection_areas =  @lawyer.collection_areas
   end
 end

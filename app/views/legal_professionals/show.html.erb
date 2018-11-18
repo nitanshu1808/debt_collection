@@ -1,0 +1,95 @@
+<div class="container text-center">
+  <div class="lawyer_heading">
+    <%= image_tag "lawyer_pic.jpg", alt: "Lawyer Image", class: "img-rounded" %>
+    <div class="lawyer-email align-detail-row">
+      <%= @lawyer.user_name.titleize %>
+    </div>
+  </div>
+  <div class="complete-profile-sprtn-line"></div>
+  <div class="user-details">
+    <div class="lawyer-email align-detail-row"><%= I18n.t("app.personal_details") %></div>
+    <div class="row align-detail-row">
+      <div class="col-md-6 lawyer-email"><%= I18n.t("user.name") %>:</div>
+      <div class="col-md-6 lawyer-email">
+        <span><%= @lawyer.name %></span>
+      </div>
+    </div>
+    <div class="row align-detail-row">
+      <div class="col-md-6 lawyer-email"><%= I18n.t("user.email") %>:</div>
+      <div class="col-md-6 lawyer-email">
+        <span><%= @lawyer.email %></span>
+      </div>
+    </div>
+    <div class="row align-detail-row">
+      <div class="col-md-6 lawyer-email"><%= I18n.t("user.contact_number") %>:</div>
+      <div class="col-md-6 lawyer-email">
+        <span><%= @lawyer.contact_number %></span>
+      </div>
+    </div>
+    <div class="row align-detail-row">
+      <div class="col-md-6 lawyer-email"><%= I18n.t("user.description") %>:</div>
+      <div class="col-md-6 lawyer-email">
+        <span><%= @lawyer.description %></span>
+      </div>
+    </div>
+  </div>
+  <div class="complete-profile-sprtn-line"></div>
+  <div class="user-details">
+    <div class="lawyer-email align-detail-row"><%= I18n.t("app.work_experience") %></div>
+    <% @work_experience.each do |experience| %>
+      <div class="row align-detail-row">
+        <div class="col-md-6 lawyer-email"><%= I18n.t("work_experience.company_name") %>:</div>
+        <div class="col-md-6 lawyer-email"><span><%= experience.company_name %></span></div>
+      </div>
+      <div class="row align-detail-row">
+        <div class="col-md-6 lawyer-email"><%= I18n.t("work_experience.location") %>:</div>
+        <div class="col-md-6 lawyer-email"><span><%= experience.location %></span></div>
+      </div>
+      <div class="row align-detail-row">
+        <div class="col-md-6 lawyer-email"><%= I18n.t("work_experience.responsibilities") %>:</div>
+        <div class="col-md-6 lawyer-email"><span><%= experience.responsibilities %></span></div>
+      </div>
+      <div class="row align-detail-row">
+        <div class="col-md-6 lawyer-email"><%= I18n.t("app.from_date") %>:</div>
+        <div class="col-md-6 lawyer-email"><span><%= modify_date(experience.from_date) %></span></div>
+      </div>
+      <div class="row align-detail-row">
+        <div class="col-md-6 lawyer-email"><%= I18n.t("app.to_date") %>:</div>
+        <div class="col-md-6 lawyer-email"><span><%= is_currently_working(experience) %></span></div>
+      </div>
+      <div class="complete-profile-sprtn-line"></div>
+    <% end %>
+  </div>
+  <div class="complete-profile-sprtn-line"></div>
+  <div class="user-details">
+    <div class="lawyer-email align-detail-row"><%= I18n.t("app.education") %></div>
+    <% @educations.each do |education| %>
+      <div class="row align-detail-row">
+        <div class="col-md-6 lawyer-email"><%= I18n.t("education.field_of_study") %>:</div>
+        <div class="col-md-6 lawyer-email"><span><%= education.field_of_study %></span></div>
+      </div>
+      <div class="row align-detail-row">
+        <div class="col-md-6 lawyer-email"><%= I18n.t("education.institution") %>:</div>
+        <div class="col-md-6 lawyer-email"><span><%= education.institution %></span></div>
+      </div>
+       <div class="row align-detail-row">
+        <div class="col-md-6 lawyer-email"><%= I18n.t("app.from_date") %>:</div>
+        <div class="col-md-6 lawyer-email"><span><%=  modify_date(education.from_date) %></span></div>
+      </div>
+      <div class="row align-detail-row">
+        <div class="col-md-6 lawyer-email"><%= I18n.t("app.to_date") %>:</div>
+        <div class="col-md-6 lawyer-email"><span><%=  modify_date(education.to_date) %></span></div>
+      </div>
+      <div class="complete-profile-sprtn-line"></div>
+    <% end %>
+  </div>
+  <div class="user-details">
+    <div class="lawyer-email align-detail-row"><%= I18n.t("app.collection_area") %></div>
+    <% @collection_areas.each do |ca| %>
+      <div class="row align-detail-row">
+        <div class="col-md-6 lawyer-email"><%= I18n.t("app.field") %>:</div>
+        <div class="col-md-6 lawyer-email"><span><%= ca.name %></span></div>
+      </div>
+    <% end %>
+  </div>
+</div>

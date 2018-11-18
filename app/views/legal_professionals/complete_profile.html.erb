@@ -33,6 +33,21 @@
         <%= f.text_area :description, :label => false, placeholder: I18n.t("app.enter_description")+ " *", autocomplete: "off", class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:description][0], cols: 20, rows: 5, maxlength: 1000 %>
       </div>
 
+      <div class="row align-text-area">
+        <div class="text-left pretify-exp"><%= I18n.t("app.collection_area")  + "*"%></div>
+        <div class="algin-collectn-area-checkbox">
+          <%= f.collection_check_boxes :collection_area_ids, CollectionArea.all, :id, :name do |b| %>
+            <div class="col-sm-2">
+              <div class="form-group text-left">
+                <% val = b.object.name.parameterize.underscore %>
+                <%= b.check_box class: "collection-area-checkbox", id: val %>
+                <%= b.label for: val %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
       <div class="complete-profile-sprtn-line"></div>
 
       <div class="row align-row text-left work_experience">
