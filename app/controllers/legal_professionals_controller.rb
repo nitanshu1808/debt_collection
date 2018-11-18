@@ -2,8 +2,8 @@ class LegalProfessionalsController < ApplicationController
   include ProfileCompletion
   #This module support for profile completion of legal professionals and Business
 
-  before_action :check_user, except:  :complete_profile
-  before_action :find_lawyer, except: :complete_profile
+  # before_action :verify_user_profile_completion_path, only:  :complete_profile
+  before_action :find_lawyer, except:  :complete_profile
 
   def complete_profile
     @lawyer = current_user
@@ -23,10 +23,5 @@ class LegalProfessionalsController < ApplicationController
   def show
     lawyer_details
   end
-
-  private
-  def check_user
-    redirect_to business_complete_profile_path, notice: I18n.t("app.unauthorize") unless current_user.is_lawyer?
-  end
-
 end
+ 
