@@ -8,7 +8,7 @@
     <ul class="nav navbar-nav">
       <li>
         <a href="<%= root_url %>" class = "vl">
-          <span class="glyphicon glyphicon-home"><%= I18n.t("app.home") %></span>
+          <span class="glyphicon glyphicon-home"></span><%= I18n.t("app.home") %>
         </a>
       </li>
     </ul>
@@ -16,13 +16,17 @@
       <% if current_user %>
       <li>
         <%= link_to root_url do %>
-          <%= I18n.t("app.welcome") + " " + current_user.user_name %>
+        <span class="glyphicon glyphicon-user"></span><%= I18n.t("app.welcome") + " " + current_user.user_name %>
         <% end %>
       </li>
       <% end %>
       <li>
+        <%= user_claim_path if current_user %>
+      </li>
+      <li>
         <%= login_logout_path %>
       </li>
+      
     </ul>
   </div>
 </nav>

@@ -2,7 +2,6 @@ class BusinessController < ApplicationController
   include ProfileCompletion
   #This module support for profile completion of legal professionals and Business
   before_action :find_business, except:  :complete_profile
-  # before_action :verify_user_profile_completion_path, except: :complete_profile
   before_action :verify_user
 
   def complete_profile
@@ -12,7 +11,10 @@ class BusinessController < ApplicationController
 
   def update
     if @business.update_attributes(user_params)
-      redirect_to claims_path
+      redirect_to business_claims_path(@business)
+    else
+      flash.now[:error] = I18n.t("error.complete_profile")
+      render 'complete_profile'
     end
   end
 

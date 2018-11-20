@@ -25,35 +25,36 @@
     </div>
   </div>
 </div>
-<div class="complete-profile-sprtn-line"></div>
-<div class="user-details">
-  <div class="lawyer-email align-detail-row"><%= I18n.t("app.address") %></div>
-  <div class="row align-detail-row">
-    <div class="col-md-6 lawyer-email"><%= I18n.t("address.street") %>:</div>
-    <div class="col-md-6 lawyer-email">
-      <span><%= @address.name %></span>
+<% if @address %>
+  <div class="complete-profile-sprtn-line"></div>
+  <div class="user-details">
+    <div class="lawyer-email align-detail-row"><%= I18n.t("app.address") %></div>
+    <div class="row align-detail-row">
+      <div class="col-md-6 lawyer-email"><%= I18n.t("address.street") %>:</div>
+      <div class="col-md-6 lawyer-email">
+        <span><%= @address.name %></span>
+      </div>
+    </div>
+
+    <div class="row align-detail-row">
+      <div class="col-md-6 lawyer-email"><%= I18n.t("address.city") %>:</div>
+      <div class="col-md-6 lawyer-email">
+        <span><%= @address.city %></span>
+      </div>
+    </div>
+
+    <div class="row align-detail-row">
+      <div class="col-md-6 lawyer-email"><%= I18n.t("address.postal_code") %>:</div>
+      <div class="col-md-6 lawyer-email">
+        <span><%= @address.postal_code %></span>
+      </div>
+    </div>
+
+    <div class="row align-detail-row">
+      <div class="col-md-6 lawyer-email"><%= I18n.t("address.county") %>:</div>
+      <div class="col-md-6 lawyer-email">
+        <span><%= @address.county %></span>
+      </div>
     </div>
   </div>
-
-  <div class="row align-detail-row">
-    <div class="col-md-6 lawyer-email"><%= I18n.t("address.city") %>:</div>
-    <div class="col-md-6 lawyer-email">
-      <span><%= @address.city %></span>
-    </div>
-  </div>
-
-  <div class="row align-detail-row">
-    <div class="col-md-6 lawyer-email"><%= I18n.t("address.postal_code") %>:</div>
-    <div class="col-md-6 lawyer-email">
-      <span><%= @address.postal_code %></span>
-    </div>
-  </div>
-
-  <div class="row align-detail-row">
-    <div class="col-md-6 lawyer-email"><%= I18n.t("address.county") %>:</div>
-    <div class="col-md-6 lawyer-email">
-      <span><%= @address.county %></span>
-    </div>
-  </div>
-
-</div>
+<% end %>

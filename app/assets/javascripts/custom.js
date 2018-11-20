@@ -170,5 +170,54 @@ $(document).on('turbolinks:load', function() {
       $('#work_experience_currently_working').prop('checked', false);
     })
 
+    $("#new_claim").validate({
+      rules: {
+        "claim[collection_area_id]": {
+          required: true
+        },
+        "claim[amount]": {
+          required: true
+        },
+        "claim[additional_desciption]": {
+          required: true
+        },
+        "claim[debtor_attributes][name]": {
+          required: true
+        },
+        "claim[debtor_attributes][city]": {
+          required: true
+        },
+        "claim[debtor_attributes][address]": {
+          required: true
+        },
+        "claim[debtor_attributes][postal_code]": {
+          required: true
+        }
+      },
+      messages: {
+        "claim[collection_area_id]": {
+          required:  I18n.t("app.select_claim_type")
+        },
+        "claim[amount]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("app.amount")})
+        },
+        "claim[additional_desciption]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("user.description")})
+        },
+        "claim[debtor_attributes][name]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("app.debtor_name")})
+        },
+        "claim[debtor_attributes][address]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("app.address")})
+        },
+        "claim[debtor_attributes][city]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("address.city")})
+        },
+        "claim[debtor_attributes][postal_code]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("address.postal_code")})
+        }
+      }
+    }); 
+
   });
 });

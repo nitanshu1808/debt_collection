@@ -68,4 +68,24 @@ module HomeHelper
   def check_user_type
     @user.is_business? ? I18n.t("app.business") : I18n.t("app.legal_professional")
   end
+
+  def user_claim_path
+    current_user.is_business? && business_claims_link || lawyer_claims_link
+  end
+
+  def business_claims_link
+    link_to business_claims_path do
+      html_claim_span.html_safe + I18n.t("app.my_claims")
+    end
+  end
+
+  def lawyer_claims_link
+    link_to claims_path do
+      html_claim_span.html_safe + I18n.t("app.claims")
+    end
+  end
+
+  def html_claim_span
+    content_tag(:span, class: " glyphicon glyphicon-gift") do "" end + " "
+  end
 end

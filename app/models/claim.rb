@@ -20,4 +20,5 @@ class Claim < ApplicationRecord
   ###########################################################################
   #enum declaration
   enum status: STATUS_OPTIONS
+  accepts_nested_attributes_for :debtor
 end

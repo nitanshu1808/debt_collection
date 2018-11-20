@@ -17,10 +17,6 @@ module ProfileCompletion
     @lawyer = Lawyer.find_by(id: params["id"] || params["legal_professional_id"])
   end
 
-  def render_template
-    render "shared/#{params["action"]}"
-  end
-
   def lawyer_details
     @educations       =  @lawyer.educations
     @work_experience  =  @lawyer.work_experiences
@@ -50,7 +46,7 @@ module ProfileCompletion
 
   def identify_business_redirection_path
     if current_user.profile_completed?
-      claims_path
+      business_claims_path
     else
       business_complete_profile_path
     end

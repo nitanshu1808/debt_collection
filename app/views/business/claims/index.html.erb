@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-3">
+      Side Panel
+    </div>
+    <div class="col-md-6">
+      Claims Index
+    </div>
+    <div class="col-md-1 text-right">
+      <%= link_to I18n.t("app.create_claim"), new_business_claim_url(@business), class: "btn btn-danger create-claim-btn", remote: true %>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>

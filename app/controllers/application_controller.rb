@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
     redirect_to identify_user_path, notice: I18n.t("devise.sessions.signed_in")
   end
 
+  def render_template
+    render "shared/#{params["action"]}"
+  end
+
 end
