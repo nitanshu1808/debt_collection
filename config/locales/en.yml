@@ -94,6 +94,9 @@ en:
     rfp:                    "Request for Proposal"
     enter_debtor:           "Enter Debtor Name"
     debtor_info:            "Debtor Information"
+    enter_pending_since:    "Enter Pending Since"
+    claim_keyword:          "CLM"
+    new_claim:              "New Claim Available in your county"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"
@@ -122,6 +125,7 @@ en:
     complete_profile:     "Error Updating Profile"
     please_add:           "Please add %{val} in order to complete the profile"
     no_record:            "No %{val} found"
+    incomplete_profile:   "Please complete your profile in order to continue"
   work_experience:
     company_name:         "Company"
     designation:          "Designation"
@@ -136,3 +140,5 @@ en:
     postal_code:        "Postal Code"
     county:             "County"
     street:             "Street Address"
+  create:
+    claim:              "Claim created successfully"

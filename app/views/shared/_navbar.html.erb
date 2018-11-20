@@ -30,9 +30,3 @@
     </ul>
   </div>
 </nav>
-
-<% flash.each do |key, value| %>
-  <div class="<%= flash_class(key) %> text-center flash-msg">
-    <%= value %>
-  </div>
-<% end %>

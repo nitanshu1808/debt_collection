@@ -1,6 +1,10 @@
 module ProfileCompletion
   extend ActiveSupport::Concern
 
+  included do
+    before_action :verify_profile_completion, except: [:complete_profile, :update]
+  end
+
   private
   def user_params
     params.require(:user).permit(:profile_image, :id, :email,
@@ -25,30 +29,38 @@ module ProfileCompletion
   end
 
   def find_business
-    @business = Business.find_by(id: params["id"])
+    @business = Business.find_by(id: params["id"] || params["business_id"])
   end
 
   def verify_user_profile_completion_path
     if current_user.is_lawyer?
-      redirect_to identify_lawyer_redirection_path
+      url_hash = identify_lawyer_redirection_path
+      redirect_to url_hash[:url], notice: url_hash[:msg]
     elsif current_user.is_business?
-      redirect_to identify_business_redirection_path
+      url_hash = identify_business_redirection_path
+      redirect_to url_hash[:url], notice: url_hash[:msg]
     end
   end
 
   def identify_lawyer_redirection_path
     if current_user.profile_completed?
-      claims_path
+      {url: claims_path}
     else
-      legal_professional_complete_profile_path
+      {url: legal_professional_complete_profile_path, msg: profile_completion_error_msg}
     end
   end
 
   def identify_business_redirection_path
     if current_user.profile_completed?
-      business_claims_path
+      {url: business_claims_path}
     else
-      business_complete_profile_path
+      {url: business_complete_profile_path, msg: I18n.t("error.incomplete_profile")}
+    end
+  end
+
+  def verify_profile_completion
+    unless current_user.profile_completed?
+      verify_user_profile_completion_path
     end
   end
 

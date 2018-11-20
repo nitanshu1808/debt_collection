@@ -15,6 +15,13 @@
       <div id="navigation_bar">
         <%= render 'shared/navbar' %>
       </div>
+      <div class="flash-messages">
+        <% flash.each do |key, value| %>
+          <div class="<%= flash_class(key) %> text-center flash-msg">
+            <%= value %>
+          </div>
+        <% end %>
+      </div>
       <div class="container-fluid">
         <%= render 'shared/bootstrap_modal' %>
         <%= yield %>

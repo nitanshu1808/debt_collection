@@ -22,6 +22,7 @@ class User < ApplicationRecord
     assoc.has_many          :sender_conversations,   foreign_key: "sender_id", class_name: 'Conversation'
     assoc.has_one_attached  :profile_image
     assoc.has_one_attached  :background_image
+    assoc.has_many          :notifications
   end
   belongs_to                :employer, class_name: "User", optional: true
 

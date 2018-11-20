@@ -74,7 +74,7 @@ module HomeHelper
   end
 
   def business_claims_link
-    link_to business_claims_path do
+    link_to business_claims_path(current_user) do
       html_claim_span.html_safe + I18n.t("app.my_claims")
     end
   end

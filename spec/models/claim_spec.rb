@@ -14,11 +14,6 @@ RSpec.describe Claim, type: :model do
       expect(claim.valid?).to  eql(false)
     end
 
-    it "validates identifier presence" do
-      claim.identifier  = nil
-      expect(claim.valid?).to  eql(false)
-    end
-
     it "validates county presence" do
       claim.county  = nil
       expect(claim.valid?).to  eql(false)

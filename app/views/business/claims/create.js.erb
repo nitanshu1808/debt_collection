@@ -1,0 +1,3 @@
+<% if @claim.errors.any? %>
+  $(".modal-body").html('<%= j(render "business/claims/form" ) %>')
+<% end %>

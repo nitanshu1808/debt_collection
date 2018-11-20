@@ -192,6 +192,15 @@ $(document).on('turbolinks:load', function() {
         },
         "claim[debtor_attributes][postal_code]": {
           required: true
+        },
+        "claim[county]": {
+          required: true
+        },
+        "claim[pending_since]": {
+          required: true
+        },
+        "claim[debtor_attributes][county]": {
+          required: true
         }
       },
       messages: {
@@ -215,9 +224,17 @@ $(document).on('turbolinks:load', function() {
         },
         "claim[debtor_attributes][postal_code]": {
           required:  I18n.t("user.enter_val", {val: I18n.t("address.postal_code")})
+        },
+        "claim[county]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("address.county")})
+        },
+        "claim[pending_since]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("claim.pending_since")})
+        },
+        "claim[debtor_attributes][county]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("address.county")})
         }
       }
     }); 
-
   });
 });

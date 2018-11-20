@@ -25,7 +25,7 @@ class LegalProfessionalsController < ApplicationController
   end
 
   def verify_user
-    verify_user_profile_completion_path unless current_user.is_lawyer?
+    verify_user_profile_completion_path if current_user.is_business?
   end
 end
  

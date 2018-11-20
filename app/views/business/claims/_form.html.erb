@@ -15,7 +15,21 @@
       </div>
     </div>
 
- 
+
+    <div class="form-group">
+      <%= f.label :pending_since, I18n.t("claim.pending_since"), class: "control-label col-sm-3" %>
+      <div class="col-sm-9">
+        <%= f.date_field :pending_since, placeholder: I18n.t("app.enter_pending_since"), class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:pending_since][0] %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :county, I18n.t("address.county"), class: "control-label col-sm-3" %>
+      <div class="col-sm-9">
+        <%= f.text_field :county, placeholder: I18n.t("app.enter_county"), class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:county][0] %>
+      </div>
+    </div>
+
     <div class="form-group">
       <%= f.label :additional_desciption, I18n.t("user.description"), class: "control-label col-sm-3" %>
       <div class="col-sm-9">
@@ -29,7 +43,7 @@
         <%= f.label :is_rfp do %>
           <%= f.check_box :is_rfp %>
           <%= I18n.t("app.rfp") %>
-        <% end %>  
+        <% end %>
       </div>
     </div>
 
@@ -58,6 +72,13 @@
       </div>
 
       <div class="form-group">
+        <%= field.label :county, I18n.t("address.county"), class: "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= field.text_field :county, placeholder: I18n.t("app.enter_county"), class: "form-control", "data-validate-error": true, "data-error-msg": field.object.errors[:county][0] %>
+        </div>
+      </div>
+
+      <div class="form-group">
         <%= field.label :postal_code, I18n.t("address.postal_code"), class: "control-label col-sm-3" %>
         <div class="col-sm-9">
           <%= field.text_field :postal_code, placeholder: I18n.t("app.enter_postal_code"), class: "form-control", "data-validate-error": true, "data-error-msg": field.object.errors[:postal_code][0] %>
@@ -73,4 +94,4 @@
     </div>
   <% end %>
 </div>
- 
+
