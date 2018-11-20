@@ -4,6 +4,6 @@ class Debtor < ApplicationRecord
   belongs_to :claim
   ###########################################################################
   #validations
-  validates :name, :address, presence: true
+  validates :name, :address, :county, :city, :postal_code, presence: true
   ###########################################################################
 end
