@@ -7,4 +7,5 @@
 //= require bootstrap.min
 //= require jquery.validate
 //= require custom
+//= require claims
 //= require_self

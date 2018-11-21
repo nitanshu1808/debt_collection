@@ -1,6 +1,12 @@
 class Business::ClaimsController < BusinessController
   def index
-    @claims = @business.claims.includes(:collection_area, :bids)
+    if params["status"].present?
+      @claims = @business.claims.includes(:collection_area, :bids).where("claims.status =?", params["status"])
+    elsif params["claim_type"].present?
+      @claims = @business.claims.includes(:collection_area, :bids)
+    else  
+      @claims = @business.claims.includes(:collection_area, :bids)
+    end
   end
 
   def new

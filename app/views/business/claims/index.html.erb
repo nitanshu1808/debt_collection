@@ -18,7 +18,7 @@
           <tbody>
             <% Claim::STATUS_OPTIONS.each do |status| %>
               <tr class="align-table-row">
-                <td>
+                <td class="claim-status">
                   <%= check_box_tag status %> <%= label_tag status %>
                 </td>
               </tr>
