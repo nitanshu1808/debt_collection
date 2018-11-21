@@ -1,6 +1,6 @@
 class Claim < ApplicationRecord
   #constants
-  STATUS_OPTIONS = %w(deactive active closed)
+  STATUS_OPTIONS = %w(Deactive Active Closed)
   ###########################################################################
   #associations
   belongs_to        :business
@@ -26,6 +26,8 @@ class Claim < ApplicationRecord
   #callbacks
   before_create :set_identifier
   ###########################################################################
+  #delegate
+  delegate :name, to: :collection_area, allow_nil: true, prefix: true
 
   def notify_lawyers
     lawyers = Lawyer.joins(:address).where("addresses.county = ?", self.county)

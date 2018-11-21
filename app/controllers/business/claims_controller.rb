@@ -1,6 +1,6 @@
 class Business::ClaimsController < BusinessController
   def index
-    @claims = @business.claims
+    @claims = @business.claims.includes(:collection_area, :bids)
   end
 
   def new

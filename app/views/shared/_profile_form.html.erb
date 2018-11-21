@@ -2,7 +2,7 @@
 
 <div class="row align-row">
   <div class="col-md-6">
-    <%= f.text_field :email, :label => false, placeholder: I18n.t("app.enter_email") + " *", autocomplete: "off", class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:email][0] %>
+    <%= f.text_field :email, :label => false, placeholder: I18n.t("app.enter_email") + " *", autocomplete: "off", class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:email][0], :readonly => true%>
   </div>
 
   <div class="col-md-6">

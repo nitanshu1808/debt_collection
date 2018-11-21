@@ -37,4 +37,8 @@ module ApplicationHelper
     current_user.is_lawyer? ? "lawyer_pic.jpg" : "start_up.png"
   end
 
+  def amount_currency(number)
+    number_to_currency(number, :unit => "€", :separator => ",", :delimiter => ".")
+  end
+
 end
