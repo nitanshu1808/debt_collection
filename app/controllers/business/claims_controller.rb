@@ -1,7 +1,7 @@
 class Business::ClaimsController < BusinessController
   def index
     if params["status"].present?
-      @claims = @business.claims.includes(:collection_area, :bids).where("claims.status =?", params["status"])
+      @claims = @business.claims.includes(:collection_area, :bids).where(status: params["status"])
     elsif params["claim_type"].present?
       @claims = @business.claims.includes(:collection_area, :bids)
     else  

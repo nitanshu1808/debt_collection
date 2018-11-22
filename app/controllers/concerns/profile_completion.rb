@@ -32,32 +32,6 @@ module ProfileCompletion
     @business = Business.find_by(id: params["id"] || params["business_id"])
   end
 
-  def verify_user_profile_completion_path
-    if current_user.is_lawyer?
-      url_hash = identify_lawyer_redirection_path
-      redirect_to url_hash[:url], notice: url_hash[:msg]
-    elsif current_user.is_business?
-      url_hash = identify_business_redirection_path
-      redirect_to url_hash[:url], notice: url_hash[:msg]
-    end
-  end
-
-  def identify_lawyer_redirection_path
-    if current_user.profile_completed?
-      {url: claims_path}
-    else
-      {url: legal_professional_complete_profile_path, msg: profile_completion_error_msg}
-    end
-  end
-
-  def identify_business_redirection_path
-    if current_user.profile_completed?
-      {url: business_claims_path}
-    else
-      {url: business_complete_profile_path, msg: I18n.t("error.incomplete_profile")}
-    end
-  end
-
   def verify_profile_completion
     unless current_user.profile_completed?
       verify_user_profile_completion_path

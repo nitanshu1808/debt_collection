@@ -37,16 +37,6 @@
       </div>
     </div>
 
-     <div class="checkbox">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-10">
-        <%= f.label :is_rfp do %>
-          <%= f.check_box :is_rfp %>
-          <%= I18n.t("app.rfp") %>
-        <% end %>
-      </div>
-    </div>
-
     <div class="sprtn-line "></div>
     <div class="row text-center lawyer-email align-debtor-info"><%= I18n.t("app.debtor_info") %></div>
     <%= f.fields_for :debtor do |field| %>
@@ -87,9 +77,19 @@
 
     <% end %>
 
+    <div class="checkbox form-group">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-10">
+        <%= f.label :is_rfp do %>
+          <%= f.check_box :is_rfp %>
+          <%= I18n.t("app.rfp") %>
+        <% end %>
+      </div>
+    </div>
+
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10 text-center">
-        <%= f.submit I18n.t("app.submit"), class: "btn btn-danger create-claim-btn" %>
+        <%= f.submit I18n.t("app.submit"), class: "btn btn-danger claim-form-btn" %>
       </div>
     </div>
   <% end %>

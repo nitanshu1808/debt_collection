@@ -1,6 +1,5 @@
 <div class="container-fluid">
   <div class="row ">
-
     <div class="claim-header text-center">
       <%= I18n.t("app.my_claims") %>
       <%= link_to I18n.t("app.create_claim"), new_business_claim_url(@business), class: "btn btn-danger create-claim-btn", remote: true %>
@@ -15,11 +14,11 @@
              </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody data-id= "<%= current_user.id %>">
             <% Claim::STATUS_OPTIONS.each do |status| %>
               <tr class="align-table-row">
                 <td class="claim-status">
-                  <%= check_box_tag status %> <%= label_tag status %>
+                  <%= check_box_tag status, status, false ,class: "status-checkbox", data: {remote: true, params: "status=#{status}", url: business_claims_path(current_user)} %> <%= label_tag status %>
                 </td>
               </tr>
             <% end %>
@@ -27,35 +26,8 @@
         </table>
       </div>
     </div>
-
-    <div class="col-md-8 align-claim-list">
-      <% @claims.each_slice(3) do |batch| %>
-        <div class="row">
-          <% batch.each do |claim| %>
-            <div class="col-md-4 claim-card">
-              <div class="identifier"><%= claim.identifier %></div>
-              <p class="identifier claim-date"><%= I18n.t("app.amount") %>: <%= amount_currency(claim.amount) %></p>
-              <p class="identifier pending-since"><%= I18n.t("app.pending_since") %>: <%= modify_date_format(claim.pending_since) %></p>
-
-              <p class="identifier claim-type">
-                <%= I18n.t("app.claim_type") %>:<%= claim.collection_area_name %>
-              </p>
-              <p class="identifier claim-type">
-                <%= I18n.t("app.county") %>:<%= claim.county %>
-              </p>
-              <p class="identifier claim-type">
-                <%= I18n.t("app.bids") %>:<%= claim.bids.size %>
-              </p>
-              <p class="identifier claim-type">
-                <%= link_to I18n.t("app.show_detail"), "#" %>
-              </p>
-              <p>
-                <%= link_to "#{I18n.t("app.status")}: #{claim.status}", "#", class: "btn btn-danger status-btn", remote: true %>
-              </p>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+    <div class="claims-list">
+      <%= render 'shared/claims' %>
     </div>
   </div>
 </div>
