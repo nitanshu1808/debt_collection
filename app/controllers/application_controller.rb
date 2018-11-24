@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
 
   protected
   def identify_user_path
-    @user.is_business? ? identify_business_redirection_path[:url] : identify_lawyer_redirection_path[:url]
+    user = current_user || @user || @business || @lawyer
+    user.is_business? ? identify_business_redirection_path[:url] : identify_lawyer_redirection_path[:url]
   end
 
   def sign_in_and_redirect

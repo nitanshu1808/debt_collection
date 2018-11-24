@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  before_action :identify_user_path, if: :current_user
+
   def index
   end
 

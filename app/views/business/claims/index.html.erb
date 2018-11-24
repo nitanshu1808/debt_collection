@@ -18,7 +18,7 @@
             <% Claim::STATUS_OPTIONS.each do |status| %>
               <tr class="align-table-row">
                 <td class="claim-status">
-                  <%= check_box_tag status, status, false ,class: "status-checkbox", data: {remote: true, params: "status=#{status}", url: business_claims_path(current_user)} %> <%= label_tag status %>
+                  <%= radio_button_tag :status, status, false ,class: "status-checkbox", data: {remote: true, params: "status=#{status}", url: business_claims_path(current_user)} %> <%= label_tag :status, status %>
                 </td>
               </tr>
             <% end %>

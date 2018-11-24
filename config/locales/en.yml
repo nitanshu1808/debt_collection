@@ -101,6 +101,9 @@ en:
     pending_since:          "Pending Since"
     bids:                   "Bids"
     show_detail:            "Show Details"
+    claim_detail:           "Claim Detail"
+    claim_identifier:       "Claim Identifier"
+    addition_info:          "Additional Information"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"

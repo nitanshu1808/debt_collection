@@ -30,13 +30,6 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <%= f.label :additional_desciption, I18n.t("user.description"), class: "control-label col-sm-3" %>
-      <div class="col-sm-9">
-        <%= f.text_area :additional_desciption, placeholder: I18n.t("app.enter_description"), class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:additional_desciption][0], rows: 5, maxlength: 1000  %>
-      </div>
-    </div>
-
     <div class="sprtn-line "></div>
     <div class="row text-center lawyer-email align-debtor-info"><%= I18n.t("app.debtor_info") %></div>
     <%= f.fields_for :debtor do |field| %>
@@ -77,7 +70,16 @@
 
     <% end %>
 
-    <div class="checkbox form-group">
+    <div class="sprtn-line "></div>
+
+    <div class="form-group">
+      <%= f.label :additional_desciption, I18n.t("user.description"), class: "control-label col-sm-3" %>
+      <div class="col-sm-9">
+        <%= f.text_area :additional_desciption, placeholder: I18n.t("app.enter_description"), class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:additional_desciption][0], rows: 5, maxlength: 1000  %>
+      </div>
+    </div>
+
+    <div class="checkbox form-group rfp-checkbox">
       <div class="col-sm-2"></div>
       <div class="col-sm-10">
         <%= f.label :is_rfp do %>

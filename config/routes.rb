@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  root to: 'home#index'
   devise_for :users, :controllers => {:registrations => "users/registrations", :omniauth_callbacks => "users/omniauth_callbacks", :sessions => "users/sessions"}
 
   unauthenticated :user do
-    root to: 'home#index' #declaring the root path for non authentic users
+
     get '/business_registration',               to: 'home#business_registration'
     get '/legal_professional_registration',     to: 'home#legal_professional_registration'
     get '/login',                               to: 'users/sessions#new'
@@ -20,10 +21,10 @@ Rails.application.routes.draw do
 
     resources :business, only: [:update, :show] do
       scope module: 'business' do
-        resources :claims,            only: [:index, :new, :create]
+        resources :claims,            only: [:index, :new, :create, :update, :show]
       end
     end
-    
+
     resources :claims,            only: [:index]
   end
 end

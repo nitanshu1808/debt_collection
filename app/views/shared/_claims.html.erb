@@ -1,29 +1,35 @@
 <div class="col-md-8 align-claim-list">
-  <% @claims.each_slice(3) do |batch| %>
-    <div class="row">
-      <% batch.each do |claim| %>
-        <div class="col-md-4 claim-card">
-          <div class="identifier"><%= claim.identifier %></div>
-          <p class="identifier claim-date"><%= I18n.t("app.amount") %>: <%= amount_currency(claim.amount) %></p>
-          <p class="identifier pending-since"><%= I18n.t("app.pending_since") %>: <%= modify_date_format(claim.pending_since) %></p>
+  <% if @claims.present? %>
+    <% @claims.each_slice(3) do |batch| %>
+      <div class="row">
+        <% batch.each do |claim| %>
+          <div class="col-md-4 claim-card">
+            <div class="identifier"><%= claim.identifier %></div>
+            <p class="identifier claim-date"><%= I18n.t("app.amount") %>: <%= amount_currency(claim.amount) %></p>
+            <p class="identifier pending-since"><%= I18n.t("app.pending_since") %>: <%= modify_date_format(claim.pending_since) %></p>
 
-          <p class="identifier claim-type">
-            <%= I18n.t("app.claim_type") %>:<%= claim.collection_area_name %>
-          </p>
-          <p class="identifier claim-type">
-            <%= I18n.t("app.county") %>:<%= claim.county %>
-          </p>
-          <p class="identifier claim-type">
-            <%= I18n.t("app.bids") %>:<%= claim.bids.size %>
-          </p>
-          <p class="identifier claim-type">
-            <%= link_to I18n.t("app.show_detail"), "#" %>
-          </p>
-          <p>
-            <%= link_to "#{I18n.t("app.status")}: #{claim.status}", "#", class: "btn btn-danger status-btn", remote: true %>
-          </p>
-        </div>
-      <% end %>
-    </div>
+            <p class="identifier claim-type">
+              <%= I18n.t("app.claim_type") %>:<%= claim.collection_area_name %>
+            </p>
+            <p class="identifier claim-type">
+              <%= I18n.t("app.county") %>:<%= claim.county %>
+            </p>
+            <p class="identifier claim-type">
+              <%= I18n.t("app.bids") %>:<%= claim.bids.size %>
+            </p>
+            <p class="identifier claim-type">
+              <%= link_to I18n.t("app.show_detail"), business_claim_path(@business, claim), remote: true %>
+            </p>
+            <% if current_user.is_business? %>
+              <p>
+                <%= link_to "#{I18n.t("app.status")}: #{claim.status}", business_claim_path(@business, claim), class: "btn btn-danger status-btn", data: {status: verify_status(claim.status) } %>
+              </p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="text-center"><%= I18n.t("error.no_record", val: I18n.t("app.claims")) %></div>
   <% end %>
 </div>
