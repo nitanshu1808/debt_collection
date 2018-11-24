@@ -33,7 +33,7 @@
       <% CollectionArea.all.each do |ca| %>
         <tr class="align-table-row">
           <td class="claim-status">
-            <%= radio_button_tag ca.name, ca.id, false ,class: "status-checkbox", data: {remote: true, params: "collection_area_id=#{ca.id}", url: business_claims_path(current_user)} %> <%= label_tag ca.name, ca.name %>
+            <%= radio_button_tag :claim_type, ca.id, false ,class: "status-checkbox", data: {remote: true, params: "collection_area_id=#{ca.id}", url: business_claims_path(current_user)} %> <%= label_tag :claim_type, ca.name %>
           </td>
         </tr>
       <% end %>

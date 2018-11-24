@@ -88,4 +88,7 @@ module HomeHelper
   def html_claim_span
     content_tag(:span, class: " glyphicon glyphicon-gift") do "" end + " "
   end
+
+  def user_notifications
+  end
 end

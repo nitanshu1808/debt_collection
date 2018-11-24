@@ -41,4 +41,17 @@ module ApplicationHelper
     number_to_currency(number, :unit => "€", :separator => ",", :delimiter => ".")
   end
 
+  def identify_user_profile
+    if current_user
+      current_user.is_lawyer? ? lawyer_path(current_user) : business_path(current_user)
+    else
+      "javascript:void(0)"
+    end
+  end
+
+  def is_different_user?
+    user = @business || @lawyer
+    current_user != user
+  end
+
 end

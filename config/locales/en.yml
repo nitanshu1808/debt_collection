@@ -104,6 +104,8 @@ en:
     claim_detail:           "Claim Detail"
     claim_identifier:       "Claim Identifier"
     addition_info:          "Additional Information"
+    message:                "Message"
+    conversation:           "Chat Messages between You & %{val}"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"
