@@ -1,0 +1,42 @@
+<div class="filter">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="filter-header"><span class="glyphicon  glyphicon glyphicon-filter"></span>
+         <%= I18n.t("app.filter_by", val: I18n.t("app.status")) %>
+       </th>
+      </tr>
+    </thead>
+    <tbody data-id= "<%= current_user.id %>">
+      <% Claim::STATUS_OPTIONS.each do |status| %>
+        <tr class="align-table-row">
+          <td class="claim-status">
+            <%= radio_button_tag :status, status, false ,class: "status-checkbox", data: {remote: true, params: "status=#{status}", url: business_claims_path(current_user)} %> <%= label_tag :status, status %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="filter">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="filter-header"><span class="glyphicon  glyphicon glyphicon-filter"></span>
+         <%= I18n.t("app.filter_by", val: I18n.t("app.claim_type")) %>
+       </th>
+      </tr>
+    </thead>
+    <tbody data-id= "<%= current_user.id %>" class = "claim-type-filter">
+      <% CollectionArea.all.each do |ca| %>
+        <tr class="align-table-row">
+          <td class="claim-status">
+            <%= radio_button_tag ca.name, ca.id, false ,class: "status-checkbox", data: {remote: true, params: "collection_area_id=#{ca.id}", url: business_claims_path(current_user)} %> <%= label_tag ca.name, ca.name %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

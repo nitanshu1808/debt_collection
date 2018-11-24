@@ -97,7 +97,7 @@ en:
     enter_pending_since:    "Enter Pending Since"
     claim_keyword:          "CLM"
     new_claim:              "New Claim Available in your county"
-    status_filter:          "Fliter by Status"
+    filter_by:              "Fliter by %{val}"
     pending_since:          "Pending Since"
     bids:                   "Bids"
     show_detail:            "Show Details"

@@ -5,26 +5,7 @@
       <%= link_to I18n.t("app.create_claim"), new_business_claim_url(@business), class: "btn btn-danger create-claim-btn", remote: true %>
     </div>
     <div class="col-md-2">
-      <div class="filter">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th class="filter-header"><span class="glyphicon glyphicon-envelope"></span>
-               <%= I18n.t("app.status_filter") %>
-             </th>
-            </tr>
-          </thead>
-          <tbody data-id= "<%= current_user.id %>">
-            <% Claim::STATUS_OPTIONS.each do |status| %>
-              <tr class="align-table-row">
-                <td class="claim-status">
-                  <%= radio_button_tag :status, status, false ,class: "status-checkbox", data: {remote: true, params: "status=#{status}", url: business_claims_path(current_user)} %> <%= label_tag :status, status %>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
+      <%= render 'shared/claim_filter' %>
     </div>
     <div class="claims-list">
       <%= render 'shared/claims' %>

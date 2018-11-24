@@ -5,8 +5,8 @@ class Business::ClaimsController < BusinessController
   def index
     if params["status"].present?
       @claims = @business.claims.joins(:debtor).includes(:collection_area, :bids).where(status: params["status"])
-    elsif params["claim_type"].present?
-      @claims = @business.claims.joins(:debtor).includes(:collection_area, :bids)
+    elsif params["collection_area_id"].present?
+      @claims = @business.claims.joins(:debtor).includes(:collection_area, :bids).where("claims.collection_area_id = ?", params["collection_area_id"])
     else
       @claims = @business.claims.joins(:debtor).includes(:collection_area, :bids)
     end
