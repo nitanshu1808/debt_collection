@@ -116,6 +116,7 @@ en:
     select_fee_type:        "Select Fee Type"
     enter_terms_of_service: "Enter Terms of Service"
     bid_on_claim:           "A bid has been made on Claim %{val} by the legal professional %{name}"
+    notification:           "Notification"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"

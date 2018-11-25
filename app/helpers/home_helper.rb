@@ -83,14 +83,6 @@ module HomeHelper
     end
   end
 
-
-  def user_notifications
-  end
-
-  def format_time(date)
-    date && date.strftime("%b %d %Y %H:%M %P")
-  end
-
   def request_for_proposals
     link_to business_request_for_proposals_url(current_user) do
       html_span("glyphicon glyphicon-certificate").html_safe + I18n.t("app.my_rfp")

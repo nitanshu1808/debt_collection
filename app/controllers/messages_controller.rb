@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+
   def index
     @user           = User.find_by(id: params["user_id"])
     @conversation   = Conversation.between(@user.id, current_user.id).first
@@ -6,12 +7,12 @@ class MessagesController < ApplicationController
       @conversation  = current_user.sender_conversations.build(receiver_id: @user.id)
       @conversation.save
     end
-    @messages      = @conversation.messages 
+    @messages      = @conversation.messages.order(created_at: :desc)
     @message       = @messages.build
   end
 
   def create
-    @user           = User.find_by(id: params["user_id"])
+    @user           = User.find_by(id: params["receiver_id"])
     @message        = current_user.messages.build(message_params)
     if @message.save && @message.notify_user(@user)
       @message      = Message.new(conversation_id: message_params["conversation_id"])

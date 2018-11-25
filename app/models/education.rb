@@ -10,4 +10,6 @@ class Education < ApplicationRecord
   validate  :from_to_date_val_comparison, if: Proc.new { |a| a.to_date && a.from_date }
   #callbacks
   after_create :verify_user_profile_completion
+  #scope
+  default_scope { order(created_at: :desc) }
 end

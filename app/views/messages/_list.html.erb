@@ -16,7 +16,7 @@
   <div class="form-group">
     <%= f.text_field :body, :label => false, placeholder: I18n.t("app.message") + " *", autocomplete: "off", class: "form-control align-msg-body", "data-validate-error": true, "data-error-msg": f.object.errors[:body][0], required: true %>
     <%= f.hidden_field :conversation_id %>
-    <%= hidden_field_tag :user_id, @user.id %>
+    <%= hidden_field_tag :receiver_id, @user.id %>
   </div>
   <%= f.submit I18n.t("app.send_message"), class: "message-btn" %>
 <% end %>

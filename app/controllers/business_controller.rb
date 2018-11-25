@@ -2,7 +2,7 @@ class BusinessController < ApplicationController
   include ProfileCompletion
   #This module support for profile completion of legal professionals and Business
   before_action :find_business, except:  :complete_profile
-  before_action :verify_user
+  before_action :verify_user, except: :show
 
   def complete_profile
     @business = current_user
