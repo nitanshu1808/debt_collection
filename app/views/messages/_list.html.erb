@@ -1,18 +1,22 @@
 <% if @messages.present? %>
   <% @messages.each do |message| %>
-    <div class="message-container">
-      <%= image_tag "message.jpg", class: "message-icon" %>
-      <p>Hello. How are you today?</p>
-      <span class="time-right">11:00</span>
-    </div>
+    <% if message.id? %>
+      <div class="message-container">
+        <div>
+          <%= image_tag "message.jpg", class: "message-icon" %>
+          <p><%= message_body(message) %></p>
+          <span class="time-right"><%= format_time(message.updated_at) %></span>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-<% else %>
-  <div class="text-center"><%= I18n.t("error.no_record", val: I18n.t("app.message")) %></div>
 <% end %>
 
-<%= form_for @message, url: user_messages_path(current_user), html: {class: 'form-inline'} do |f| %>
+<%= form_for @message, url: user_messages_path(current_user), html: {class: 'form-inline text-center', remote: true} do |f| %>
   <div class="form-group">
-    <%= f.text_field :body, :label => false, placeholder: I18n.t("app.message") + " *", autocomplete: "off", class: "form-control align-field", "data-validate-error": true, "data-error-msg": f.object.errors[:body][0], data: {behavior: "message"} %>
+    <%= f.text_field :body, :label => false, placeholder: I18n.t("app.message") + " *", autocomplete: "off", class: "form-control align-msg-body", "data-validate-error": true, "data-error-msg": f.object.errors[:body][0], required: true %>
+    <%= f.hidden_field :conversation_id %>
+    <%= hidden_field_tag :user_id, @user.id %>
   </div>
-  <%= f.submit I18n.t("app.submit") %>
+  <%= f.submit I18n.t("app.send_message"), class: "message-btn" %>
 <% end %>

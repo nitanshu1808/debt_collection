@@ -54,4 +54,9 @@ module ApplicationHelper
     current_user != user
   end
 
+  def message_body(message)
+    user = message.user_id == current_user.id ? current_user : @user
+    "<b>#{user.user_name}</b>: #{message.body}".html_safe
+  end
+
 end

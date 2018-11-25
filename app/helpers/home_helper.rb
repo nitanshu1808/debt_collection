@@ -91,4 +91,8 @@ module HomeHelper
 
   def user_notifications
   end
+
+  def format_time(date)
+    date && date.strftime("%b %d %Y %H:%M %P")
+  end
 end

@@ -10,9 +10,9 @@ class Conversation < ApplicationRecord
   validate  :sender_receiver_uniqueness
   ############################################################################
   #scope
-  scope :between, -> (sender_id, receiver_id) {where("(sender_id = ? AND receiver_id = ?)
-                      OR (receiver_id = ? and sender_id = ?)", 
-                      sender_id, receiver_id, receiver_id, sender_id)}
+  scope :between, -> (sender_id, receiver_id) {where('(sender_id = ? and receiver_id = ?)
+                      OR (receiver_id = ? and sender_id =?)',
+                      sender_id, receiver_id, sender_id, receiver_id).first}
   ############################################################################
   #private methods
   private

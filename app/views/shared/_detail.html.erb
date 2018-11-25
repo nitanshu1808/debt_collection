@@ -2,7 +2,7 @@
   <div class="lawyer-email align-detail-row">
     <%= I18n.t("app.personal_details") %>
     <% if is_different_user? %>
-      <%= link_to user_messages_url(current_user), class: "btn btn-danger create-claim-btn", remote: true do  %>
+      <%= link_to user_messages_url(@business || @lawyer), class: "btn btn-danger create-claim-btn", remote: true do  %>
         <span class="glyphicon glyphicon-envelope"></span>
         <%= I18n.t("app.message") %>
       <% end %>
