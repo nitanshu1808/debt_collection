@@ -91,7 +91,7 @@ $(document).on('turbolinks:load', function() {
       readURL(this);
   });
 
-  $('#myModal').on('click', '.modal-body .work-experience-form',  function() {
+  $('#myModal').on('click', '.modal-body .work-experience-form, .bid-form',  function() {
     $("#new_work_experience").validate({
       rules: {
         "work_experience[company_name]": {
@@ -158,7 +158,7 @@ $(document).on('turbolinks:load', function() {
           required:  I18n.t("user.enter_val", {val: I18n.t("app.to_date")})
         }
       }
-    });    
+    });
 
     $('#work_experience_currently_working').on('click', function(e){
       if ($(this).is(":checked")){
@@ -235,6 +235,31 @@ $(document).on('turbolinks:load', function() {
           required:  I18n.t("user.enter_val", {val: I18n.t("address.county")})
         }
       }
-    }); 
+    });
+
+    $("#new_bid").validate({
+      rules: {
+        "bid[fee_type]": {
+          required: true
+        },
+        "bid[amount]": {
+          required: true
+        },
+        "bid[terms_of_service]": {
+          required: true
+        }
+      },
+      messages: {
+        "bid[fee_type]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("bid.fee_type")})
+        },
+        "bid[amount]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("app.amount")})
+        },
+        "bid[terms_of_service]": {
+          required:  I18n.t("user.enter_val", {val: I18n.t("bid.terms_of_service")})
+        },
+      }
+    });
   });
 });

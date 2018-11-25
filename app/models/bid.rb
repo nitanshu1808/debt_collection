@@ -1,13 +1,13 @@
 class Bid < ApplicationRecord
   #constants
-  FEE_TYPE =        %w(hourly_fee, flat_fee, contingency)
+  FEE_TYPE =        %w(Hourly Flat Contingency)
   STATUS_OPTIONS =  %w(pending denied approved cancelled)
-  #Pending is initial state of bid, when lawyer makes a bid on claim,
   ################################################################################
   #associations
-  belongs_to :lawyer
-  belongs_to :claim, counter_cache: true
-  has_many_attached :attachments
+  belongs_to          :lawyer
+  belongs_to          :claim, counter_cache: true
+  has_many_attached   :attachments
+  has_many            :notifications, :as => :notifier
   ################################################################################
   #enum
   enum status:    STATUS_OPTIONS
@@ -25,6 +25,14 @@ class Bid < ApplicationRecord
   #delegate
   delegate    :amount, to: :claim, prefix: true
   ################################################################################
+
+  def notify_business(claim, lawyer)
+    notification = self.notifications.build({
+                  user_id:              claim.business.id,
+                  notfication_message:  I18n.t("app.bid_on_claim", val: claim.identifier, name: lawyer.user_name.titleize),
+                  })
+    notification.save
+  end
   #private methods
   private
   

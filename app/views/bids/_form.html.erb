@@ -1,0 +1,35 @@
+<div class="bid-form">
+  <%= form_for(@bid, url: claim_bids_path(@claim), remote: true, html: {class: "text-center"})  do |f| %>
+
+    <%= f.hidden_field :lawyer_id %>
+
+    <div class="form-group row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <%= f.number_field :amount, value: number_to_currency(f.object.amount.to_f), step: 100, placeholder: I18n.t("app.enter_amount"), class: "form-control align-bid-field", "data-validate-error": true, "data-error-msg": f.object.errors[:amount][0]  %>  
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <%= f.select(:fee_type, Bid::FEE_TYPE, {:include_blank => I18n.t("app.select_fee_type")}, {:class => "form-control align-bid-field"} ) %>  
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <%= f.text_area :terms_of_service, placeholder: I18n.t("app.enter_terms_of_service"), class: "form-control align-bid-field", "data-validate-error": true, "data-error-msg": f.object.errors[:terms_of_service][0], rows: 5, maxlength: 1000  %>  
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+
+
+    <div class="form-group row">
+      <%= f.submit I18n.t("app.submit"), class: "btn btn-danger claim-form-btn" %>
+    </div>
+  <% end %>
+</div>

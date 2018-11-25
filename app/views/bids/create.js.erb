@@ -1,0 +1,3 @@
+<% if @bid.errors.any? %>
+  $(".modal-body").html('<%= j(render "bids/form" ) %>')
+<% end %>

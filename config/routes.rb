@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     end
 
     resources :claims,                          only: [:index, :show] do
-      resources :bids
+      resources :bids,                          only: [:new,   :index,   :create,  :update]
     end
 
     resources :users, shallow: true do
