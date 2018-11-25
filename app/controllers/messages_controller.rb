@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   def index
     @user           = User.find_by(id: params["user_id"])
-    @conversation   = Conversation.between(@user.id, current_user.id)
+    @conversation   = Conversation.between(@user.id, current_user.id).first
     if @conversation.blank?
       @conversation  = current_user.sender_conversations.build(receiver_id: @user.id)
       @conversation.save

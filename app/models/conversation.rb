@@ -12,7 +12,7 @@ class Conversation < ApplicationRecord
   #scope
   scope :between, -> (sender_id, receiver_id) {where('(sender_id = ? and receiver_id = ?)
                       OR (receiver_id = ? and sender_id =?)',
-                      sender_id, receiver_id, sender_id, receiver_id).first}
+                      sender_id, receiver_id, sender_id, receiver_id)}
   ############################################################################
   #private methods
   private
