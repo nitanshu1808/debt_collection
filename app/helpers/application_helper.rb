@@ -60,10 +60,14 @@ module ApplicationHelper
   end
 
   def identify_claim_path
-    if params["action"] == "index"
-      business_claims_path(current_user)
-    elsif params["action"] == "request_for_proposals"
-      business_request_for_proposals_path(current_user)
+    if params["controller"] == "claims"
+      claims_path
+    else
+      if params["action"] == "index"
+        business_claims_path(current_user)
+      elsif params["action"] == "request_for_proposals"
+        business_request_for_proposals_path(current_user)
+      end
     end
   end
 

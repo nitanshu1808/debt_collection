@@ -469,10 +469,12 @@
   margin: 20px;
 }
 .claim-description{
-  width: 60%;
-  text-align: justify;
-  text-justify: inter-word;
+  width: 40%;
+  text-align: justify-all !important;
   padding: 7px;
+  margin-left: 220px;
+  font-size: 17px;
+  color: #4A0000;
 }
 .rfp-checkbox{
   margin: 20px 0px !important;

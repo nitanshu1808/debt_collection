@@ -1,6 +1,5 @@
 class Business::ClaimsController < BusinessController
-
-  before_action :find_claim, only: [:update, :show]
+  include ClaimInfo
 
   def index
     fetch_business_claims(false)
@@ -28,10 +27,6 @@ class Business::ClaimsController < BusinessController
     update_status if params["status"].present?
   end
 
-  def show
-    @debtor = @claim.debtor
-    render 'shared/claim_detail'
-  end
 
   private
   def claim_params
@@ -52,10 +47,6 @@ class Business::ClaimsController < BusinessController
     else
       render json: {error: @claim.errors.full_messages}, status: 404 and return
     end
-  end
-
-  def find_claim
-    @claim = Claim.find_by(id: params["id"])
   end
 
   def fetch_business_claims(is_rfp)

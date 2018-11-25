@@ -15,14 +15,23 @@
               <%= I18n.t("app.county") %>:<%= claim.county %>
             </p>
             <p class="identifier claim-type">
-              <%= I18n.t("app.bids") %>:<%= claim.bids.size %>
+              <% if claim.is_rfp %>
+                <%= link_to I18n.t("app.assign"), legal_professionals_path %>
+              <% else %>
+                <%= I18n.t("app.bids") %>:<%= claim.bids.size %>
+              <% end %>
             </p>
-            <p class="identifier claim-type">
-              <%= link_to I18n.t("app.show_detail"), business_claim_path(@business, claim), remote: true %>
-            </p>
+            
             <% if current_user.is_business? %>
+              <p class="identifier claim-type">
+                <%= link_to I18n.t("app.show_detail"), business_claim_path(@business, claim) %>
+              </p>
               <p>
                 <%= link_to "#{I18n.t("app.status")}: #{claim.status}", business_claim_path(@business, claim), class: "btn btn-danger status-btn", data: {status: verify_status(claim.status) } %>
+              </p>
+            <% else %>
+              <p class="identifier claim-type">
+                <%= link_to I18n.t("app.show_detail"), claim_path(claim) %>
               </p>
             <% end %>
           </div>

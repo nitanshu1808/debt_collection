@@ -11,8 +11,9 @@ $(document).on('turbolinks:load', function() {
     }
 
     var onDone = function (result) {
-      console.log(result);
       self.text(I18n.t("app.status") + ": " + status )
+      var newStatus = (status == "Active" && "Deactive" || "Active")
+      self.attr("data-status", newStatus);
     }
 
     var onFail = function( err ) {

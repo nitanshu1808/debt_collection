@@ -110,6 +110,7 @@ en:
     new_message:            "New message from %{val}"
     my_rfp:                 "My Request for Proposal"
     legal_professionals:    "Legal Professionals"
+    assign:                 "Assign"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"
