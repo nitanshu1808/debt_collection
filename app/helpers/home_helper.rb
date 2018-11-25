@@ -91,11 +91,15 @@ module HomeHelper
     date && date.strftime("%b %d %Y %H:%M %P")
   end
 
-  def is_request_for_proposal
-    if current_user.is_business?
-      link_to business_request_for_proposals_url(current_user) do
-        html_span("glyphicon glyphicon-certificate").html_safe + I18n.t("app.my_rfp")
-      end
+  def request_for_proposals
+    link_to business_request_for_proposals_url(current_user) do
+      html_span("glyphicon glyphicon-certificate").html_safe + I18n.t("app.my_rfp")
+    end
+  end
+
+  def lawyer_list
+    link_to legal_professionals_path do
+      html_span("glyphicon glyphicon-education").html_safe + I18n.t("app.legal_professionals")
     end
   end
 end

@@ -13,10 +13,6 @@ module ProfileCompletion
                   address_attributes: [:id, :name, :city, :postal_code, :county])
   end
 
-  def profile_completion_error_msg
-    @lawyer.valid? ? @lawyer.profile_completion_error : I18n.t("error.complete_profile")
-  end
-
   def find_lawyer
     @lawyer = Lawyer.find_by(id: params["id"] || params["legal_professional_id"])
   end

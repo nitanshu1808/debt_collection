@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     get '/legal_professional_complete_profile', to: 'legal_professionals#complete_profile'
     get '/business_complete_profile',           to: 'business#complete_profile'
 
-    resources :legal_professionals,             only: [:update, :show] do
+    resources :legal_professionals,             only: [:update, :show, :index] do
       resources :work_experience,               only: [:new, :create]
       resources :education,                     only: [:new, :create]
       resources :bids,                          only: [:index]

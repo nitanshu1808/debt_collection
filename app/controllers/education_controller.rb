@@ -1,6 +1,6 @@
 class EducationController < ApplicationController
   include ProfileCompletion
-
+  skip_before_action :verify_profile_completion
   before_action :find_lawyer
   def new
     @education = @lawyer.educations.build

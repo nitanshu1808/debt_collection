@@ -54,11 +54,16 @@
           </ul>
         </li>
 
+        <% if current_user.is_business? %>
+          <li>
+            <%= request_for_proposals %>
+          </li>
+          <li>
+            <%= lawyer_list %>
+          </li>
+        <% end %>
 
-
-        <li>
-          <%= is_request_for_proposal %>
-        </li>
+        
 
       <% end %>
 

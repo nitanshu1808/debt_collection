@@ -1,0 +1,20 @@
+<div class="filter">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="filter-header"><span class="glyphicon  glyphicon glyphicon-filter"></span>
+         <%= I18n.t("app.filter_by", val: I18n.t("app.collection_area")) %>
+       </th>
+      </tr>
+    </thead>
+    <tbody data-id= "<%= current_user.id %>" class = "claim-type-filter">
+      <% CollectionArea.all.each do |ca| %>
+        <tr class="align-table-row">
+          <td class="claim-status">
+            <%= radio_button_tag :claim_type, ca.id, false ,class: "status-checkbox", data: {remote: true, params: "collection_area_id=#{ca.id}", url: legal_professionals_path } %> <%= label_tag :claim_type, ca.name %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

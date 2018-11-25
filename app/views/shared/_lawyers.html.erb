@@ -1,0 +1,26 @@
+<div class="col-md-8 align-claim-list">
+  <% if @legal_professionals.present? %>
+    <% @legal_professionals.each_slice(3) do |batch| %>
+      <div class="row">
+        <% batch.each_with_index do |lawyer, index| %>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <a href="/w3images/nature.jpg" target="_blank">
+              <%= link_to legal_professional_path(lawyer) do %>
+                <%= image_tag "lawyer_pic.jpg", class: "align-lawyer-img" %>
+                <div class="caption">
+                  <p class="lawyer-info">
+                    <%= lawyer.name %>
+                  </p>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="text-center"><%= I18n.t("error.no_record", val: I18n.t("app.legal_professional")) %></div>
+  <% end %>
+</div>
+  

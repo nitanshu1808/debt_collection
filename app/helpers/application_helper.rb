@@ -43,7 +43,7 @@ module ApplicationHelper
 
   def identify_user_profile
     if current_user
-      current_user.is_lawyer? ? lawyer_path(current_user) : business_path(current_user)
+      current_user.is_lawyer? ? legal_professional_path(current_user) : business_path(current_user)
     else
       "javascript:void(0)"
     end

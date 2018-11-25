@@ -5,11 +5,12 @@ class Lawyer < User
     assoc.has_many :work_experiences
     assoc.has_many :educations
   end
+
   has_many :bids
   has_and_belongs_to_many :collection_areas, foreign_key: 'user_id'
   has_many :request_for_proposals
   ####################################################################################
-
+  scope :completed_profiles, -> {joins(:collection_areas).where(profile_completed: true)}
   #instance methods
   def profile_completion_error
     message = ""
