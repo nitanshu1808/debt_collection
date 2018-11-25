@@ -11,7 +11,7 @@
       <% Claim::STATUS_OPTIONS.each do |status| %>
         <tr class="align-table-row">
           <td class="claim-status">
-            <%= radio_button_tag :status, status, false ,class: "status-checkbox", data: {remote: true, params: "status=#{status}", url: business_claims_path(current_user)} %> <%= label_tag :status, status %>
+            <%= radio_button_tag :status, status, false ,class: "status-checkbox", data: {remote: true, params: "status=#{status}", url: identify_claim_path} %> <%= label_tag :status, status %>
           </td>
         </tr>
       <% end %>
@@ -33,7 +33,7 @@
       <% CollectionArea.all.each do |ca| %>
         <tr class="align-table-row">
           <td class="claim-status">
-            <%= radio_button_tag :claim_type, ca.id, false ,class: "status-checkbox", data: {remote: true, params: "collection_area_id=#{ca.id}", url: business_claims_path(current_user)} %> <%= label_tag :claim_type, ca.name %>
+            <%= radio_button_tag :claim_type, ca.id, false ,class: "status-checkbox", data: {remote: true, params: "collection_area_id=#{ca.id}", url: identify_claim_path} %> <%= label_tag :claim_type, ca.name %>
           </td>
         </tr>
       <% end %>

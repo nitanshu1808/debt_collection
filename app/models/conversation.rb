@@ -3,7 +3,7 @@ class Conversation < ApplicationRecord
   #associations
   belongs_to :sender,   foreign_key: 'sender_id',   class_name: 'User'
   belongs_to :receiver, foreign_key: 'receiver_id', class_name: 'User'
-  has_many :messages,   dependent: :destroy
+  has_many   :messages,   dependent: :destroy
   ############################################################################
   #validations
   validates_uniqueness_of :sender_id, :scope => :receiver_id

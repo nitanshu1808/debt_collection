@@ -9,7 +9,7 @@ module HomeHelper
 
   def logout_path
     link_to destroy_user_session_path, method: :delete do
-      html_login_span.html_safe + I18n.t("app.logout")
+      html_span("glyphicon glyphicon-log-in").html_safe + I18n.t("app.logout")
     end
   end
 
@@ -35,13 +35,13 @@ module HomeHelper
 
   def login_path
     link_to new_user_session_path do
-      html_login_span.html_safe + I18n.t("app.sign_in")
+      html_span("glyphicon glyphicon-log-in").html_safe + I18n.t("app.sign_in")
     end
   end
 
   def registration_path
     link_to business_registration_path do
-      html_registration_span.html_safe + I18n.t("app.sign_up")
+      html_span("glyphicon glyphicon-user").html_safe + I18n.t("app.sign_up")
     end
   end
 
@@ -49,13 +49,11 @@ module HomeHelper
     current_user.image_url
   end
 
-  def html_login_span
-    content_tag( :span,class: "glyphicon glyphicon-log-in") do "" end + " "
+  def html_span(cls)
+    content_tag( :span,class: cls) do "" end + " "
   end
 
-  def html_registration_span
-    content_tag( :span,class: "glyphicon glyphicon-user") do "" end + " "
-  end
+
 
   def user_profile_image_tag(image)
     image_tag(image, alt: "logo", class: 'app-icon img-circle')
@@ -75,24 +73,29 @@ module HomeHelper
 
   def business_claims_link
     link_to business_claims_path(current_user) do
-      html_claim_span.html_safe + I18n.t("app.my_claims")
+      html_span("glyphicon glyphicon-gift").html_safe + I18n.t("app.my_claims")
     end
   end
 
   def lawyer_claims_link
     link_to claims_path do
-      html_claim_span.html_safe + I18n.t("app.claims")
+      html_span("glyphicon glyphicon-gift").html_safe + I18n.t("app.claims")
     end
   end
 
-  def html_claim_span
-    content_tag(:span, class: " glyphicon glyphicon-gift") do "" end + " "
-  end
 
   def user_notifications
   end
 
   def format_time(date)
     date && date.strftime("%b %d %Y %H:%M %P")
+  end
+
+  def is_request_for_proposal
+    if current_user.is_business?
+      link_to business_request_for_proposals_url(current_user) do
+        html_span("glyphicon glyphicon-certificate").html_safe + I18n.t("app.my_rfp")
+      end
+    end
   end
 end

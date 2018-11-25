@@ -3,13 +3,12 @@ class Business::ClaimsController < BusinessController
   before_action :find_claim, only: [:update, :show]
 
   def index
-    if params["status"].present?
-      @claims = @business.claims.joins(:debtor).includes(:collection_area, :bids).where(status: params["status"])
-    elsif params["collection_area_id"].present?
-      @claims = @business.claims.joins(:debtor).includes(:collection_area, :bids).where("claims.collection_area_id = ?", params["collection_area_id"])
-    else
-      @claims = @business.claims.joins(:debtor).includes(:collection_area, :bids)
-    end
+    fetch_business_claims(false)
+  end
+
+  def request_for_proposals
+    fetch_business_claims(true)
+    render "index" if request.format.to_s == "text/javascript"
   end
 
   def new
@@ -57,5 +56,15 @@ class Business::ClaimsController < BusinessController
 
   def find_claim
     @claim = Claim.find_by(id: params["id"])
+  end
+
+  def fetch_business_claims(is_rfp)
+    if params["status"].present?
+      @claims = @business.associated_claims(is_rfp).where(status: params["status"])
+    elsif params["collection_area_id"].present?
+      @claims = @business.associated_claims(is_rfp).where("claims.collection_area_id = ?", params["collection_area_id"])
+    else
+      @claims = @business.associated_claims(is_rfp)
+    end
   end
 end

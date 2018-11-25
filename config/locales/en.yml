@@ -108,6 +108,7 @@ en:
     conversation:           "Chat Messages between You & %{val}"
     send_message:           "Send Message"
     new_message:            "New message from %{val}"
+    my_rfp:                 "My Request for Proposal"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"

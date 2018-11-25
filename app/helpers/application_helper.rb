@@ -38,7 +38,7 @@ module ApplicationHelper
   end
 
   def amount_currency(number)
-    number_to_currency(number, :unit => "€", :separator => ",", :delimiter => ".")
+    number_to_currency(number, :unit => "€", precision: 2)
   end
 
   def identify_user_profile
@@ -57,6 +57,14 @@ module ApplicationHelper
   def message_body(message)
     user = message.user_id == current_user.id ? current_user : @user
     "<b>#{user.user_name}</b>: #{message.body}".html_safe
+  end
+
+  def identify_claim_path
+    if params["action"] == "index"
+      business_claims_path(current_user)
+    elsif params["action"] == "request_for_proposals"
+      business_request_for_proposals_path(current_user)
+    end
   end
 
 end
