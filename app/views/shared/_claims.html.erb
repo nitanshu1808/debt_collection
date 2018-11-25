@@ -18,7 +18,7 @@
               <% if claim.is_rfp %>
                 <%= link_to I18n.t("app.assign"), legal_professionals_path %>
               <% else %>
-                <%= I18n.t("app.bids") %>:<%= claim.bids.size %>
+                <%= I18n.t("app.bids") %>:<%= claim.bids_count %>
               <% end %>
             </p>
             

@@ -1,6 +1,11 @@
 <div class="form-horizontal text-center detail-claim">
   <div class="form-group">
     <p class="lawyer-email"><%= claim_header %></p>
+    <% if current_user.is_lawyer? %>
+      <%= link_to user_messages_url(), class: "btn btn-danger create-claim-btn", remote: true do  %>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        <%= I18n.t("app.message") %>
+      <% end %>
   </div>
 
 

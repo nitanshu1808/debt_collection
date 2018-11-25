@@ -6,7 +6,7 @@ class Bid < ApplicationRecord
   ################################################################################
   #associations
   belongs_to :lawyer
-  belongs_to :claim
+  belongs_to :claim, counter_cache: true
   has_many_attached :attachments
   ################################################################################
   #enum
