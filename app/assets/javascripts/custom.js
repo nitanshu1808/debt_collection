@@ -91,7 +91,7 @@ $(document).on('turbolinks:load', function() {
       readURL(this);
   });
 
-  $('#myModal').on('click', '.modal-body .work-experience-form, .bid-form',  function() {
+  $('#myModal').on('show.bs.modal', function () {
     $("#new_work_experience").validate({
       rules: {
         "work_experience[company_name]": {
