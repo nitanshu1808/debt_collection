@@ -27,7 +27,12 @@ Rails.application.routes.draw do
     end
 
     resources :claims,                          only: [:index, :show] do
-      resources :bids,                          only: [:new,   :index,   :create,  :update]
+      resources :bids,                          only: [:new,   :index,   :create,  :update] do
+        member do
+          get 'approve'
+          get 'deny'
+        end
+      end
     end
 
     resources :users, shallow: true do

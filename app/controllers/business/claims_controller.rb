@@ -1,6 +1,8 @@
 class Business::ClaimsController < BusinessController
   include ClaimInfo
 
+  before_action :find_claim, only: [:update, :bids]
+
   def index
     fetch_business_claims(false)
   end
@@ -23,10 +25,8 @@ class Business::ClaimsController < BusinessController
   end
 
   def update
-    @claim = Claim.find_by(id: params["id"])
     update_status if params["status"].present?
   end
-
 
   private
   def claim_params
@@ -57,5 +57,9 @@ class Business::ClaimsController < BusinessController
     else
       @claims = @business.associated_claims(is_rfp)
     end
+  end
+
+  def find_claim
+    @claim = Claim.find_by(id: params["id"])
   end
 end

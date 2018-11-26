@@ -1,0 +1,97 @@
+<div class="container text-center">
+  <div class="bids-claim-header">
+    <span><%= I18n.t("app.claim_identifier") %>: <%= @claim.identifier %></span>
+  </div>
+
+  <div class="container">
+    <div class="form-group">
+      <%= label_tag :amount, I18n.t("app.amount")+ ":", class: "control-label col-sm-4 bid-info" %>
+      <div class="col-sm-8 ">
+        <%= label_tag :amount, amount_currency(@claim.amount), class: "control-label bid-info" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :claim_type, I18n.t("app.claim_type") + ":", class: "control-label col-sm-4 bid-info" %>
+      <div class="col-sm-8">
+        <%= label_tag :claim_type, @claim.collection_area_name , class: "control-label bid-info" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="bid-hdr">
+    <span><%= I18n.t("app.bids_info") %></span>
+  </div>
+
+  <div class="container">
+    <% if  @bids.present? %>
+      <% @bids.each_with_index do |bid, index| %>
+
+        <div class="row bid-num bid-info">
+          <%= I18n.t("app.bid") %>#<%= index + 1 %>
+          <%= link_to  I18n.t("app.approve_bid"), approve_claim_bid_path(@claim, bid), class: "btn btn-success align-bid-decider-btn" %>
+          <%= link_to  I18n.t("app.deny_bid"),    deny_claim_bid_path(@claim, bid), class: "btn btn-danger align-bid-decider-btn" %>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :lawyer_name,   I18n.t("app.lawyer_name")+ ":", class: "control-label col-sm-4 bid-info" %>
+          <div class="col-sm-8 ">
+            <%= label_tag :lawyer_name, bid.lawyer_name, class: "control-label bid-info" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :lawyer_email,   I18n.t("app.lawyer_email")+ ":", class: "control-label col-sm-4 bid-info" %>
+          <div class="col-sm-8 ">
+            <%= label_tag :lawyer_email, bid.lawyer_email, class: "control-label bid-info" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :lawyer_contact,   I18n.t("user.contact_number")+ ":", class: "control-label col-sm-4 bid-info" %>
+          <div class="col-sm-8 ">
+            <%= label_tag :lawyer_contact, bid.lawyer.contact_number, class: "control-label bid-info" %>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <%= label_tag :amount, I18n.t("app.amount")+ ":", class: "control-label col-sm-4 bid-info" %>
+          <div class="col-sm-8 ">
+            <%= label_tag :amount, amount_currency(bid.amount), class: "control-label bid-info" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :status,   I18n.t("app.bid_status")+ ":", class: "control-label col-sm-4 bid-info" %>
+          <div class="col-sm-8 ">
+            <%= label_tag :status, bid.status.titleize, class: "control-label bid-info" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :fee_type,   I18n.t("bid.fee_type")+ ":", class: "control-label col-sm-4 bid-info" %>
+          <div class="col-sm-8 ">
+            <%= label_tag :fee_type, bid.fee_type, class: "control-label bid-info" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :terms_of_service,   I18n.t("bid.terms_of_service")+ ":", class: "control-label col-sm-4 bid-info" %>
+          <div class="col-sm-8 ">
+            <%= label_tag :terms_of_service, bid.terms_of_service, class: "control-label bid-info" %>
+          </div>
+        </div>
+
+        
+
+      <% end %>
+    <% else %>
+      <div class="row text-center">
+        <p class="notification-msg">
+          <%= I18n.t("error.no_record", val: I18n.t("app.bid")) %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>

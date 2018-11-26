@@ -24,6 +24,8 @@ class Bid < ApplicationRecord
   before_validation :check_bid_amount, if: :amount?
   #delegate
   delegate    :amount, to: :claim, prefix: true
+  delegate    :name,   to: :lawyer, prefix: true
+  delegate    :email,  to: :lawyer, prefix: true
   ################################################################################
 
   def notify_business(claim, lawyer)
@@ -33,9 +35,20 @@ class Bid < ApplicationRecord
                   })
     notification.save
   end
+
+  def notify_lawyer(claim)
+    msg = I18n.t("app.bid_approved", val: claim.identifier, name: claim.business.user_name.titleize) if self.approved?
+    msg = I18n.t("app.bid_denied", val: claim.identifier, name: claim.business.user_name.titleize) if self.denied?
+    notification = self.notifications.build({
+                  user_id:              lawyer.id,
+                  notfication_message:  msg,
+                  })
+    notification.save
+  end
+
   #private methods
   private
-  
+
   def check_bid_amount
     errors.add(:base, I18n.t("bid.invalid_amount")) if amount > (claim_amount/2)
   end

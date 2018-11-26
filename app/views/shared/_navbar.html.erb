@@ -39,17 +39,25 @@
               </div>
             </div>
             <div class="drop-content">
-              <% @notification.each do |notification| %>
-                <li>
-                  <div class="col-md-3 col-sm-3 col-xs-3">
-                    <%= image_tag "notification.png", class: "notify-img" %>
-                  </div>
-                  <div class="col-md-9 col-sm-9 col-xs-9 pd-l0">
-                    <p data-><%= notification.notfication_message %></p>
-                    <hr>
-                    <p class="time"><%= format_time(notification.created_at)  %></p>
-                  </div>
-                </li>
+              <% if @notification.present? %>
+                <% @notification.each do |notification| %>
+                  <li>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                      <%= image_tag "notification.png", class: "notify-img" %>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-9 pd-l0">
+                      <p data-><%= notification.notfication_message %></p>
+                      <hr>
+                      <p class="time"><%= format_time(notification.created_at)  %></p>
+                    </div>
+                  </li>
+                <% end %>
+              <% else %>
+                <div class="row text-center">
+                  <p class="notification-msg">
+                    <%= I18n.t("error.no_record", val: I18n.t("app.notification")) %>
+                  </p>
+                </div>
               <% end %>
             </div>
             <!-- <div class="notify-drop-footer text-center">

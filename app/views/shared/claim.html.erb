@@ -16,21 +16,21 @@
       <div class="col-sm-8 ">
         <%= label_tag :name, @owner.name, class: "control-label" %>
       </div>
-    </div> 
+    </div>
 
     <div class="form-group">
       <%= label_tag :email, I18n.t("user.email"), class: "control-label col-sm-4" %>
       <div class="col-sm-8 ">
         <%= label_tag :email, @owner.email, class: "control-label" %>
       </div>
-    </div> 
+    </div>
 
     <div class="form-group">
       <%= label_tag :contact_number, I18n.t("user.contact_number"), class: "control-label col-sm-4" %>
       <div class="col-sm-8 ">
         <%= label_tag :contact_number, @owner.contact_number, class: "control-label" %>
       </div>
-    </div>  
+    </div>
 
     <div class="sprtn-line "></div>
 
@@ -102,13 +102,20 @@
     <div class="sprtn-line "></div>
     <div class="row text-center lawyer-email align-debtor-info"><%= I18n.t("app.addition_info") %></div>
 
-    <div class="form-group">
-      <%= label_tag :total_bids, I18n.t("app.bids"), class: "control-label col-sm-4" %>
-      <div class="col-sm-8">
-        <%= label_tag :total_bids, @claim.bids_count , class: "control-label" %>
+    <% if @claim.present? %>
+      <div class="form-group">
+
+        <%= link_to claim_bids_path(@claim) do %>
+          <span class="control-label col-sm-4 bids-btn">
+            <%= I18n.t("app.bids")  %>
+          </span>
+          <div class="col-sm-8">
+            <%= label_tag :total_bids, @claim.bids_count , class: "control-label" %>
+          </div>
+        <% end %>
       </div>
-    </div>
-    
+    <% end %>
+
     <div class="form-group">
       <%= label_tag :description, I18n.t("user.description"), class: "control-label col-sm-4" %>
       <div class="col-sm-8 claim-description">
