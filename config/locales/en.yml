@@ -126,7 +126,6 @@ en:
     lawyer_email:           "Lawyer Email"
     bid_denied:             "Your Bid on the claim %{val} has been denied by the Business %{name}"
     bid_approved:           "Hurray! Your Bid on the claim %{val} has been approved by the Business %{name}"
-    bid_success:            "Bid %{val} successfully"
     deny:                   "denied"
     approve:                "approved"
   user:

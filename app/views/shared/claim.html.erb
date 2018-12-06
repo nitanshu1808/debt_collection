@@ -102,7 +102,7 @@
     <div class="sprtn-line "></div>
     <div class="row text-center lawyer-email align-debtor-info"><%= I18n.t("app.addition_info") %></div>
 
-    <% if @claim.present? %>
+    <% if @claim.present? && !(current_user.is_lawyer?) %>
       <div class="form-group">
 
         <%= link_to claim_bids_path(@claim) do %>

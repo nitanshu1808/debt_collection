@@ -29,8 +29,10 @@
 
         <div class="row bid-num bid-info">
           <%= I18n.t("app.bid") %>#<%= index + 1 %>
-          <%= link_to  I18n.t("app.approve_bid"), approve_claim_bid_path(@claim, bid), class: "btn btn-success align-bid-decider-btn" %>
-          <%= link_to  I18n.t("app.deny_bid"),    deny_claim_bid_path(@claim, bid), class: "btn btn-danger align-bid-decider-btn" %>
+          <% if @claim.business.id == current_user.id %>
+            <%= link_to  I18n.t("app.approve_bid"), approve_claim_bid_path(@claim, bid), class: "btn btn-success align-bid-decider-btn" %>
+            <%= link_to  I18n.t("app.deny_bid"),    deny_claim_bid_path(@claim, bid), class: "btn btn-danger align-bid-decider-btn" %>
+          <% end %>
         </div>
 
         <div class="form-group">

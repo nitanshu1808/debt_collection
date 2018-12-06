@@ -1,13 +1,13 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <%= link_to "javascript:void(0)", class: "navbar-brand app-name"  do %>
+      <%= link_to root_url, class: "navbar-brand app-name"  do %>
         <%= I18n.t("app.name") %>
       <% end %>
     </div>
     <ul class="nav navbar-nav">
       <li>
-        <a href="javascript:void(0)" class = "vl">
+        <a href="/" class = "vl">
           <span class="glyphicon glyphicon-home"></span><%= I18n.t("app.home") %>
         </a>
       </li>
