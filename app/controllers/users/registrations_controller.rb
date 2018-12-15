@@ -17,5 +17,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
     sign_up(:user, @user)
     redirect_to identify_user_path, notice: I18n.t("devise.registrations.signed_up")
   end
-
 end

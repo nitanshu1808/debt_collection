@@ -1,7 +1,7 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
-    @user = User.create_or_update_facebook_user(request.env["omniauth.auth"])
+    @user = User.create_or_update_facebook_user(request.env["omniauth.auth"], request.env['omniauth.params']['user'])
     if @user.errors.any?
       render 'home/registration'
     else

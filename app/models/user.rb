@@ -37,11 +37,12 @@ class User < ApplicationRecord
     end
   end
 
-  def self.create_or_update_facebook_user(auth)
-    user   = User.find_by(user_name: auth[:info][:email]) || User.new
+  def self.create_or_update_facebook_user(auth, type=nil)
+    class_name = type && type.constantize || User
+    user       = class_name.find_by(email: auth[:info][:email]) || class_name.new
     #checking whether user is created via normal process or by social provider
     if (user.persisted? && user.try(:provider).nil?)
-      user.errors.add(:user_name, I18n.t('app.already_exist'))
+      user.errors.add(:email, I18n.t('app.already_exist'))
     else
       user.build_provider if user.new_record?
       user.social_provider_user(auth)

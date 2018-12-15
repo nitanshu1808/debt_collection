@@ -28,7 +28,7 @@ module HomeHelper
   end
 
   def facebook_button
-    link_to user_facebook_omniauth_authorize_path do
+    link_to user_facebook_omniauth_authorize_path({user: @user.type}) do
       image_tag("login_with_fb.png", class: "facebook-logo")
     end
   end

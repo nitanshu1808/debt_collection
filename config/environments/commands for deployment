@@ -1,0 +1,13 @@
+commands for deployment
+
+heroku apps:create debtcollection
+
+git push heroku master
+
+
+heroku run rake db: migrate –-app debtcollection 
+
+
+https://debtcollection.herokuapp.com/
+
+heroku run rake db:seed --app debtcollection

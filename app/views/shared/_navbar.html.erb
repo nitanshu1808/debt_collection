@@ -6,20 +6,17 @@
       <% end %>
     </div>
     <ul class="nav navbar-nav">
-      <li>
-        <a href="/" class = "vl">
-          <span class="glyphicon glyphicon-home"></span><%= I18n.t("app.home") %>
-        </a>
-      </li>
+      <% if current_user %>
+        <li>
+          <%= link_to identify_user_profile, class: "vl" do %>
+            <%= image_tag identify_user_profile_pic, class: "profile-icon img-circle" %>
+            <%= I18n.t("app.welcome") + " " + current_user.user_name %>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
-        <li>
-          <%= link_to identify_user_profile do %>
-          <span class="glyphicon glyphicon-user"></span><%= I18n.t("app.welcome") + " " + current_user.user_name %>
-          <% end %>
-        </li>
-
         <li>
           <%= user_claim_path %>
         </li>

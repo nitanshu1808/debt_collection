@@ -1,6 +1,6 @@
 <div class="container text-center">
   <div class="lawyer_heading">
-    <%= image_tag "start_up", alt: "Business Image", class: "img-rounded align-profile-img" %>
+    <%= image_tag identify_user_profile_pic(@business), alt: "Business Image", class: "img-rounded align-profile-img" %>
     <div class="lawyer-email align-detail-row">
       <%= @business.user_name.titleize %>
     </div>
@@ -8,5 +8,4 @@
   <div class="complete-profile-sprtn-line"></div>
   <%= render 'shared/detail', {user: @business} %>
   <div class="complete-profile-sprtn-line"></div>
- 
 </div>

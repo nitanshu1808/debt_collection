@@ -33,8 +33,15 @@ module ApplicationHelper
     current_user.is_lawyer? ? "lawyer-coverpic" : "business-coverpic"
   end
 
-  def identify_user_profile_pic
-    current_user.is_lawyer? ? "lawyer_pic.jpg" : "start_up.png"
+  def identify_user_profile_pic(user=nil)
+    user     = user || current_user
+    image    = user.profile_image.attached?
+    provider = user.provider.try(:image_url) unless image
+    if image || provider
+      image ? url_for(image) : provider
+    else
+      user.is_lawyer? ? "lawyer_pic.jpg" : "start_up.png"
+    end
   end
 
   def amount_currency(number)
