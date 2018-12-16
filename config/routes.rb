@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get '/login',                               to: 'users/sessions#new'
   end
 
-  get '/about',                                 to: 'home#about_us'
+  get '/about',                                 to: 'home#about'
 
   authenticated :user do
     get '/legal_professional_complete_profile', to: 'legal_professionals#complete_profile'

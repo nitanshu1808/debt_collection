@@ -512,7 +512,7 @@
   font-size: 20px;
   color: green;
   font-family: -webkit-body;
-  margin: 10px 0px; 
+  margin: 10px 0px;
 }
 .bid-num{
   margin: 20px 0px 10px 100px;
@@ -540,4 +540,27 @@
 .attachment{
   width:  100px;
   height: 100px;
+}
+.about-para{
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18.5px;
+  margin: 5px 0px;
+}
+.about-head{
+  color: #4A0000;
+  font-size: 40px;
+}
+.about_us{
+  margin: 30px 50px;
+}
+.support-pic{
+  height: 200px !important;
+  width: 100%;
+}
+.support-head{
+  color: #4A0000;
+  font-size: 25px;
+  margin: 10px 0px;
 }

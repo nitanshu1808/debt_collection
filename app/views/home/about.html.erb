@@ -1,1 +1,96 @@
-<h1>Hello World</h1>
+<div class="container text-center">
+  <h1 class="about-head">
+    <%= I18n.t("app.about_us") %>
+  </h1>
+  <div class="about_us">
+    <p class="about-para">
+      <%= I18n.t("app.about").html_safe %>
+    </p>
+    <br>
+    <p class="about-para">
+      Special thanks to my <b>family, friends, Dr. Shazia A Afzal (Super Visor) and all professors </b> who taught me. The lessons taught were extremely helpful. It would have never been possible for me to complete this project without their help.
+    </p>
+
+    <div class="row">
+      <p class="support-head">Professor's</p>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="javascript:void(0)" target="_blank">
+            <%= image_tag "lawyer_pic1.jpg", class: "support-pic" %>
+            <div class="caption">
+              <p>Dr. Shazia A Afzal (Super Visor)</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="javascript:void(0)" target="_blank">
+            <%= image_tag "lawyer_pic.jpg", class: "support-pic" %>
+            <div class="caption">
+              <p>Harnaik Dhoot</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="javascript:void(0)" target="_blank">
+            <%= image_tag "lawyer_pic0.jpg", class: "support-pic" %>
+            <div class="caption">
+              <p>Abhishek Kaushik</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+      <p class="support-head">Family</p>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="javascript:void(0)" target="_blank">
+            <%= image_tag "lawyer_pic1.jpg", class: "support-pic" %>
+            <div class="caption">
+              <p>CM Rehani</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="javascript:void(0)" target="_blank">
+            <%= image_tag "lawyer_pic.jpg", class: "support-pic" %>
+            <div class="caption">
+              <p>Baljeet Rehani</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="javascript:void(0)" target="_blank">
+            <%= image_tag "him.jpg", class: "support-pic" %>
+            <div class="caption">
+              <p>Himanshu Rehani</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+</div>
+
+
+
+

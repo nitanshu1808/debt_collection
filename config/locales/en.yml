@@ -132,6 +132,15 @@ en:
     attachment:             "Attachment"
     bid_approval:           "Bid Approved"
     bid_denial:             "Bid Denied"
+    about:                  "<b>Debt Collection aims to improve the account receivables and
+                            mitigate the loss of financial liquidity by connecting legal
+                            professionals with the businesses.</b>
+                            Cash flow is the lifeblood of all businesses. Nonetheless, today,
+                            with money tight for most people, getting paid in full and on time is
+                            not always a reality. Not only does it represents an obstacles to the
+                            proper functioning of the business or internal market but also
+                            negatively affects the financial liquidity, stability and investment
+                            capabilities of a business which are vital in the time of crisis."
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"

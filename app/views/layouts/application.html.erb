@@ -31,9 +31,7 @@
       <div class="container-fluid">
         <ul class="nav navbar-nav">
           <li>
-            <a href="<%= root_url %>" class = "navbar-footer-link">
-              <%= I18n.t("app.about_us") %>
-            </a>
+            <%= link_to I18n.t("app.about_us"), about_url, class: "navbar-footer-link" %>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
