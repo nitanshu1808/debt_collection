@@ -6,7 +6,8 @@ $(document).on('turbolinks:load', function() {
         maxlength: 30
       },
       "user[email]": {
-        required: true
+        required: true,
+        email: true
       },
       "user[name]": {
         required: true,
@@ -75,16 +76,28 @@ $(document).on('turbolinks:load', function() {
     $('.flash-msg').slideUp(800);
   }, 3000);
 
+
   function readURL(input) {
     if (input.files && input.files[0]) {
-        var reader = new FileReader();
+        var file            = input.files[0];
+        var fileType        = file["type"];
+        var ValidImageTypes = ["image/gif", "image/jpeg", "image/png"];
 
-        reader.onload = function (e) {
-            $('.avatar').attr('src', e.target.result);
+        if ($.inArray(fileType, ValidImageTypes) < 0) {
+          $('.avatar').attr('src', '/assets/file.jpg');
+        }else{
+          setFileSrc(file);
         }
 
-        reader.readAsDataURL(input.files[0]);
     }
+  }
+
+  function setFileSrc(file){
+    var reader          = new FileReader();
+    reader.onload = function (e) {
+      $('.avatar').attr('src', e.target.result);
+    }
+    reader.readAsDataURL(file);
   }
 
   $("#user_profile_image").change(function(){
@@ -261,5 +274,10 @@ $(document).on('turbolinks:load', function() {
         },
       }
     });
+
+    $("#claim_document").change(function(){
+      readURL(this);
+    });
   });
+
 });

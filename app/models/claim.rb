@@ -5,7 +5,7 @@ class Claim < ApplicationRecord
   #associations
   belongs_to        :business
   belongs_to        :collection_area
-  has_many_attached :documents
+  has_one_attached  :document
   has_many          :bids
   has_many          :request_for_proposals
   has_one           :debtor

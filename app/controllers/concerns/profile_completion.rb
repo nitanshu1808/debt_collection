@@ -7,7 +7,7 @@ module ProfileCompletion
 
   private
   def user_params
-    params.require(:user).permit(:profile_image, :id, :email,
+    params.require(:user).permit(:profile_image, :id, :email, :profile_image,
                   :user_name, :name, :contact_number, :description,
                   :profile_completed, collection_area_ids: [],
                   address_attributes: [:id, :name, :city, :postal_code, :county])

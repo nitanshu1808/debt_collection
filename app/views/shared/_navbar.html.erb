@@ -9,7 +9,7 @@
       <% if current_user %>
         <li>
           <%= link_to identify_user_profile, class: "vl" do %>
-            <%= image_tag identify_user_profile_pic, class: "profile-icon img-circle" %>
+            <span class="glyphicon glyphicon-user"></span>
             <%= I18n.t("app.welcome") + " " + current_user.user_name %>
           <% end %>
         </li>

@@ -31,7 +31,7 @@ class Business::ClaimsController < BusinessController
   private
   def claim_params
     params.require(:claim).permit(:business_id, :collection_area_id,
-              :amount, :identifier, :additional_desciption,
+              :amount, :identifier, :additional_desciption, :document,
               :is_rfp, :pending_since, :county,
               debtor_attributes: [:county, :name,
               :address, :city, :postal_code, :claim_id])

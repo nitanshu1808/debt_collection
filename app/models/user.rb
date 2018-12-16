@@ -21,7 +21,6 @@ class User < ApplicationRecord
     assoc.has_many          :receiver_conversations, foreign_key: "receiver_id", class_name: 'Conversation'
     assoc.has_many          :sender_conversations,   foreign_key: "sender_id", class_name: 'Conversation'
     assoc.has_one_attached  :profile_image
-    assoc.has_one_attached  :background_image
     assoc.has_many          :notifications
   end
   belongs_to                :employer, class_name: "User", optional: true
@@ -29,6 +28,8 @@ class User < ApplicationRecord
   #nested_attributes
   accepts_nested_attributes_for :provider
   accepts_nested_attributes_for :address
+
+  # scope :with_eager_loaded_profile_image, -> { eager_load(profile_image_attachment: :blob) }
 
 
   USER_TYPE.each do |user_type|

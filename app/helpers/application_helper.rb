@@ -35,9 +35,9 @@ module ApplicationHelper
 
   def identify_user_profile_pic(user=nil)
     user     = user || current_user
-    image    = user.profile_image.attached?
-    provider = user.provider.try(:image_url) unless image
-    if image || provider
+    image    = user.profile_image
+    provider = user.provider && user.provider.try(:image_url) unless image.attached?
+    if image.attached? || provider
       image ? url_for(image) : provider
     else
       user.is_lawyer? ? "lawyer_pic.jpg" : "start_up.png"

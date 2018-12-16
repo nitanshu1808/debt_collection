@@ -128,6 +128,7 @@ en:
     bid_approved:           "Hurray! Your Bid on the claim %{val} has been approved by the Business %{name}"
     deny:                   "denied"
     approve:                "approved"
+    documents:              "Upload Document"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"
