@@ -99,10 +99,26 @@
     </div>
 
 
+    <% if @doc.attached? %>
+      <div class="sprtn-line "></div>
+      <div class="row text-center lawyer-email align-debtor-info"><%= I18n.t("app.attachment") %></div>
+
+      <div class="form-group text-center">
+        <%= link_to url_for(@doc), target: "_blank" do %>
+          <% if ApplicationRecord::VALID_FILE_TYPE.include?(@doc.attachment.blob.content_type) %>
+            <%= image_tag url_for(@doc), class: "attachment" %>
+          <% else %>
+            <%= image_tag "file", class: "attachment" %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+
+
     <div class="sprtn-line "></div>
     <div class="row text-center lawyer-email align-debtor-info"><%= I18n.t("app.addition_info") %></div>
 
-    <% if @claim.present? && !(current_user.is_lawyer?) %>
+    <% if !(current_user.is_lawyer?) %>
       <div class="form-group">
 
         <%= link_to claim_bids_path(@claim) do %>

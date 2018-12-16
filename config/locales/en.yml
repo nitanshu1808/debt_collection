@@ -129,6 +129,7 @@ en:
     deny:                   "denied"
     approve:                "approved"
     documents:              "Upload Document"
+    attachment:             "Attachment"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"
