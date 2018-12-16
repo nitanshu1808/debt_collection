@@ -6,7 +6,7 @@ class Bid < ApplicationRecord
   #associations
   belongs_to          :lawyer
   belongs_to          :claim, counter_cache: true
-  has_many_attached   :attachments
+  has_one_attached    :document
   has_many            :notifications, :as => :notifier
   ################################################################################
   #enum

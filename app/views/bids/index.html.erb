@@ -85,7 +85,22 @@
           </div>
         </div>
 
-        
+        <% doc = bid.document %>
+        <% if doc.attached? %>
+          <div class="form-group">
+            <%= label_tag :document,   I18n.t("app.attachment")+ ":", class: "control-label col-sm-4 bid-info" %>
+            <div class="col-sm-8 ">
+              <%= link_to url_for(doc), target: "_blank" do %>
+                <% if ApplicationRecord::VALID_FILE_TYPE.include?(doc.attachment.blob.content_type) %>
+                  <%= image_tag url_for(doc), class: "attachment" %>
+                <% else %>
+                  <%= image_tag "file", class: "attachment" %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+
 
       <% end %>
     <% else %>

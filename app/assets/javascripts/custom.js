@@ -275,7 +275,7 @@ $(document).on('turbolinks:load', function() {
       }
     });
 
-    $("#claim_document").change(function(){
+    $("#claim_document, #bid_document").change(function(){
       readURL(this);
     });
   });

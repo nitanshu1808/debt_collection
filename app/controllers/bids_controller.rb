@@ -3,7 +3,7 @@ class BidsController < ApplicationController
   before_action :find_bid, only: [:approve, :deny]
 
   def index
-    @bids = @claim.bids.includes(:lawyer)
+    @bids = @claim.bids.includes(:lawyer).with_attached_document
   end
 
   def new
@@ -22,13 +22,13 @@ class BidsController < ApplicationController
     @bid.approved!
     @bid.notify_lawyer(@claim)
     denied_bids
-    redirect_to claim_bids_path(@claim), notice: I18n.t("app.bid_success", val: I18n.t("app.approve"))
+    redirect_to claim_bids_path(@claim), notice: I18n.t("app.bid_approval")
   end
 
   def deny
     @bid.denied!
     @bid.notify_lawyer(@claim)
-    redirect_to claim_bids_path(@claim), notice: I18n.t("app.bid_success", val: I18n.t("app.deny"))
+    redirect_to claim_bids_path(@claim), notice: I18n.t("app.bid_denial")
   end
 
   private
@@ -41,7 +41,7 @@ class BidsController < ApplicationController
   end
 
   def bid_params
-    params.require(:bid).permit(:lawyer_id, :claim_id, :amount, :status, :fee_type, :terms_of_service)
+    params.require(:bid).permit(:lawyer_id, :claim_id, :amount, :status, :fee_type, :terms_of_service, :document)
   end
 
   def denied_bids

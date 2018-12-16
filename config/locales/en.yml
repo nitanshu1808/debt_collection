@@ -130,6 +130,8 @@ en:
     approve:                "approved"
     documents:              "Upload Document"
     attachment:             "Attachment"
+    bid_approval:           "Bid Approved"
+    bid_denial:             "Bid Denied"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"

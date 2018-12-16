@@ -4,32 +4,48 @@
     <%= f.hidden_field :lawyer_id %>
 
     <div class="form-group row">
-      <div class="col-sm-2"></div>
-      <div class="col-sm-8">
-        <%= f.number_field :amount, value: number_to_currency(f.object.amount.to_f), step: 100, placeholder: I18n.t("app.enter_amount"), class: "form-control align-bid-field", "data-validate-error": true, "data-error-msg": f.object.errors[:amount][0]  %>  
+      <div class="col-sm-3">
+        <%= f.label :fee_type, I18n.t("app.select_fee_type"), class: "control-label" %>
       </div>
-      <div class="col-sm-2"></div>
+      <div class="col-sm-9">
+        <%= f.select(:fee_type, Bid::FEE_TYPE, {:include_blank => I18n.t("app.select_fee_type")}, {:class => "form-control"} ) %>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <div class="col-sm-3">
+        <%= f.label :amount, I18n.t("app.amount"), class: "control-label" %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.text_field :amount, placeholder: I18n.t("app.enter_amount"), class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:amount][0]  %>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <div class="col-sm-3">
+        <%= f.label :document, I18n.t("app.documents"), class: "control-label doc-title" %>
+      </div>
+      <div class="col-sm-9 text-left">
+        <%= f.file_field :document, class: "hide" %>
+        <%= image_tag "file", class: "avatar claim-doc" %>
+      </div>
     </div>
 
     <div class="form-group row">
-      <div class="col-sm-2"></div>
-      <div class="col-sm-8">
-        <%= f.select(:fee_type, Bid::FEE_TYPE, {:include_blank => I18n.t("app.select_fee_type")}, {:class => "form-control align-bid-field"} ) %>  
+      <div class="col-sm-3">
+        <%= f.label :terms_of_service, I18n.t("app.enter_terms_of_service"), class: "control-label" %>
       </div>
-      <div class="col-sm-2"></div>
-    </div>
-
-    <div class="form-group">
-      <div class="col-sm-2"></div>
-      <div class="col-sm-8">
-        <%= f.text_area :terms_of_service, placeholder: I18n.t("app.enter_terms_of_service"), class: "form-control align-bid-field", "data-validate-error": true, "data-error-msg": f.object.errors[:terms_of_service][0], rows: 5, maxlength: 1000  %>  
+      <div class="col-sm-9">
+        <%= f.text_area :terms_of_service, placeholder: I18n.t("app.enter_terms_of_service"), class: "form-control", "data-validate-error": true, "data-error-msg": f.object.errors[:enter_terms_of_service][0], rows: 3, maxlength: 1000  %>
       </div>
-      <div class="col-sm-2"></div>
     </div>
-
 
     <div class="form-group row">
       <%= f.submit I18n.t("app.submit"), class: "btn btn-danger claim-form-btn" %>
     </div>
+
+
   <% end %>
 </div>
