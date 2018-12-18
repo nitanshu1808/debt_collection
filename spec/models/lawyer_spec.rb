@@ -5,11 +5,11 @@ RSpec.describe Lawyer, type: :model do
 
     let!(:lawyer)                   { create(:lawyer) }
 
-    let!(:collection_areas)         { create_list(:collection_area, 20) }
+    let!(:collection_areas)         { CollectionArea.all }
 
     it "verifies associated collection areas" do
       lawyer.collection_areas << collection_areas
-      expect(lawyer.collection_areas.size).to eql(20)
+      expect(lawyer.collection_areas.size).to eql(CollectionArea.count)
     end
 
   end

@@ -10,7 +10,7 @@ en:
     logged_out:           "Logged out successfully"
     signed_in:            "Signed In Successfully"
     welcome_user:         "Welcome %{val}"
-    invalid_to_date:      "To Date should be less than From Date"
+    invalid_to_date:      " should be less than From Date"
     invalid_status:       "%{value} is not a valid status"
     invalid_amount:       "should be greater than 100"
     invalid_fee:          "%{value} is not a valid fee type"

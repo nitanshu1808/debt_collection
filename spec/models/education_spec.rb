@@ -27,7 +27,7 @@ RSpec.describe Education, type: :model do
     it "compares from and to date" do
       education.from_date = Time.now
       expect(education.valid?).to eql(false)
-      expect(education.errors.full_messages.first).to eql(I18n.t("app.invalid_to_date"))
+      expect(education.errors.full_messages.first).to eql("To date  should be less than From Date")
     end
 
   end

@@ -8,7 +8,7 @@ FactoryBot.define do
     description    { FFaker::Book.title }
   end
 
-  after(:create) do |user, evaluator|
-    user.address ||= build(:address, :user => user)
-  end
+  # after(:create) do |user, evaluator|
+  #   user.address ||= build(:address, :user => user)
+  # end
 end
