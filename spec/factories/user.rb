@@ -7,8 +7,4 @@ FactoryBot.define do
     contact_number { FFaker::PhoneNumberDA.mobile_phone_number}
     description    { FFaker::Book.title }
   end
-
-  # after(:create) do |user, evaluator|
-  #   user.address ||= build(:address, :user => user)
-  # end
 end

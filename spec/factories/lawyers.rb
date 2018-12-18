@@ -1,10 +1,16 @@
 FactoryBot.define do
   factory :lawyer, class: Lawyer, parent: :user do
+
+    factory :lawyer_with_associations do
+      transient do
+        record_count { 3 }
+      end
+
+      after(:create) do |lawyer, evaluator|
+        create_list(:education,       evaluator.record_count, lawyer: lawyer)
+        create_list(:work_experience, evaluator.record_count, lawyer: lawyer)
+        create(:address, user: lawyer)
+      end
+    end
   end
-
-  # after(:create) do |lawyer, evaluator|
-  #   lawyer.educations << build_list(:education, 2, lawyer: lawyer)
-  #   lawyer.work_experiences << build_list(:work_experience, 2, lawyer: lawyer)
-  # end
-
 end
