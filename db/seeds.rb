@@ -1,4 +1,3 @@
-# lawyer   = FactoryBot.create_list(:lawyer, 20)
-# business = FactoryBot.create_list(:business, 20)
-
-# CollectionArea.create(CollectionArea::TYPES.map{|collection_area| {name: collection_area} })
+CollectionArea.create(CollectionArea::TYPES.map{|collection_area| {name: collection_area} })
+lawyer   = FactoryBot.create_list(:lawyer_with_associations, 20)
+business = FactoryBot.create_list(:business_with_associations, 20)

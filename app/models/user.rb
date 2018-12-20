@@ -69,4 +69,8 @@ class User < ApplicationRecord
       }
     }
   end
+
+  def complete_profile!
+    update_attributes(profile_completed: true)
+  end
 end

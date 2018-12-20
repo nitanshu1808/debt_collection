@@ -16,8 +16,6 @@ class Claim < ApplicationRecord
             :county, presence: true
   validates :status, :inclusion => {:in => STATUS_OPTIONS,
     message: I18n.t("app.invalid_status", %{value}) }
-  validates :amount, numericality: { greater_than_or_equal_to: 100,
-    only_integer: true, message: I18n.t("app.invalid_amount") }
   ###########################################################################
   #enum declaration
   enum status: STATUS_OPTIONS

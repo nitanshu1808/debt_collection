@@ -27,12 +27,6 @@ RSpec.describe Claim, type: :model do
   context "validates status and amount" do
     let!(:claim)                  { build(:claim) }
 
-    it "verify claim amount" do
-      claim.amount = 60
-      expect(claim.valid?).to  eql(false)
-      expect(claim.errors.full_messages.first).to  eql("Amount " + I18n.t("app.invalid_amount"))
-    end
-
     it "raises argument error error on invalid status" do
       expect{claim.status  = 4}.to raise_error(ArgumentError)
     end
