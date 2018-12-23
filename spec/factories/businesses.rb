@@ -3,7 +3,7 @@ FactoryBot.define do
 
     factory :business_with_associations do
       transient do
-        record_count { 3 }
+        record_count { 2 }
       end
 
       after(:create) do |business, evaluator|
