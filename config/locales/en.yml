@@ -141,6 +141,7 @@ en:
                             proper functioning of the business or internal market but also
                             negatively affects the financial liquidity, stability and investment
                             capabilities of a business which are vital in the time of crisis."
+    questionnaire:          "Questionnaire"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"

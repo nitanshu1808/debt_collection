@@ -6,9 +6,15 @@
       <% end %>
     </div>
     <ul class="nav navbar-nav">
+      <li>
+        <%= link_to "https://docs.google.com/forms/d/1Xlzis0Jt04_HtEUuoLP-Yb8JKWYAMGcnDjO88jOWtdg/viewform", class: "vl" do %>
+          <span class="glyphicon glyphicon-question-sign"></span>
+          <%= I18n.t("app.questionnaire") %>
+        <% end %>
+      </li>
       <% if current_user %>
         <li>
-          <%= link_to identify_user_profile, class: "vl" do %>
+          <%= link_to identify_user_profile do %>
             <span class="glyphicon glyphicon-user"></span>
             <%= I18n.t("app.welcome") + " " + current_user.user_name %>
           <% end %>
