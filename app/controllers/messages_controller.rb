@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
 
+  before_action :mark_notification_as_read, only: :index
+
   def index
-    mark_notification_as_read
     @user           = User.find_by(id: params["user_id"])
     @conversation   = Conversation.between(@user.id, current_user.id).first
     if @conversation.blank?
@@ -24,13 +25,6 @@ class MessagesController < ApplicationController
   private
   def message_params
     params.require(:message).permit(:conversation_id, :body)
-  end
-
-  def mark_notification_as_read
-    if params["notification_id"].present?
-      notification = Notification.find_by(id: params["notification_id"])
-      notification.update_attributes(is_read: true)
-    end
   end
 
 end

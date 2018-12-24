@@ -58,4 +58,11 @@ class ApplicationController < ActionController::Base
     new_user_session_path
   end
 
+  def mark_notification_as_read
+    if params["notification_id"].present?
+      notification = Notification.find_by(id: params["notification_id"])
+      notification.update_attributes(is_read: true)
+    end
+  end
+
 end

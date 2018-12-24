@@ -15,7 +15,8 @@ module UtilityHelper
     notifier =  notification.notifier
     case notification.notifier_type
       when "Bid"
-        "javascript:void(0)"
+        claim = notifier.claim
+        business_claim_url(business_id: claim.business_id, id: claim.id, notification_id: notification.id)
       when "Claim"
         "javascript:void(0)"
       when "Message"

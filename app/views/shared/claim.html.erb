@@ -2,7 +2,7 @@
   <div class="form-horizontal text-center detail-claim">
     <div class="form-group">
       <p class="lawyer-email"><%= claim_header %></p>
-      <% if current_user.is_lawyer? %>
+      <% if current_user.is_lawyer? && @claim.Active? %>
         <%= link_to new_claim_bid_path(@claim), class: "btn btn-danger create-claim-btn", remote: true do  %>
           <span class="glyphicon glyphicon-chevron-up"></span>
           <%= I18n.t("app.start_bidding") %>

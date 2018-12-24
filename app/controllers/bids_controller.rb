@@ -21,6 +21,7 @@ class BidsController < ApplicationController
   def approve
     @bid.approved!
     @bid.notify_lawyer(@claim)
+    @claim.Closed!
     denied_bids
     redirect_to claim_bids_path(@claim), notice: I18n.t("app.bid_approval")
   end

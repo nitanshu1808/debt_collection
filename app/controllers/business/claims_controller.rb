@@ -2,6 +2,7 @@ class Business::ClaimsController < BusinessController
   include ClaimInfo
 
   before_action :find_claim, only: [:update, :bids]
+  before_action :mark_notification_as_read, only: :show
 
   def index
     fetch_business_claims(false)
