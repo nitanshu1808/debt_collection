@@ -7,7 +7,7 @@
             <div class="thumbnail">
               <a href="/w3images/nature.jpg" target="_blank">
               <%= link_to legal_professional_path(lawyer) do %>
-                <%= image_tag "lawyer_pic.jpg", class: "align-lawyer-img" %>
+                <%= image_tag identify_user_profile_pic(lawyer), class: "align-lawyer-img" %>
                 <div class="caption">
                   <p class="lawyer-info">
                     <%= lawyer.name %>
@@ -23,4 +23,3 @@
     <div class="text-center"><%= I18n.t("error.no_record", val: I18n.t("app.legal_professional")) %></div>
   <% end %>
 </div>
-  

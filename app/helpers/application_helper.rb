@@ -80,7 +80,7 @@ module ApplicationHelper
   end
 
   def user_notification
-    @notification = Notification.where("user_id = ?", current_user.id)
+    @notification = Notification.unread_msgs(current_user)
   end
 
 end

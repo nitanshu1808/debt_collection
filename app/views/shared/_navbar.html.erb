@@ -46,16 +46,18 @@
             <div class="drop-content">
               <% if @notification.present? %>
                 <% @notification.each do |notification| %>
-                  <li>
-                    <div class="col-md-3 col-sm-3 col-xs-3">
-                      <%= image_tag "notification.png", class: "notify-img" %>
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-xs-9 pd-l0">
-                      <p data-><%= notification.notfication_message %></p>
-                      <hr>
-                      <p class="time"><%= format_time(notification.created_at)  %></p>
-                    </div>
-                  </li>
+                  <%= link_to notification_path(notification), remote: verify_ajax_call( notification ) do %>
+                    <li>
+                      <div class="col-md-3 col-sm-3 col-xs-3">
+                        <%= image_tag "notification.png", class: "notify-img" %>
+                      </div>
+                      <div class="col-md-9 col-sm-9 col-xs-9 pd-l0">
+                        <p data-><%= notification.notfication_message %></p>
+                        <p class="time"><%= format_time(notification.created_at)  %></p>
+                        <hr>
+                      </div>
+                    </li>
+                  <% end %>
                 <% end %>
               <% else %>
                 <div class="row text-center">
@@ -76,11 +78,7 @@
             <%= lawyer_list %>
           </li>
         <% end %>
-
-        
-
       <% end %>
-
        <li>
         <%= login_logout_path %>
       </li>
