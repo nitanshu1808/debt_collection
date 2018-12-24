@@ -3,7 +3,8 @@ class BidsController < ApplicationController
   before_action :find_bid, only: [:approve, :deny]
 
   def index
-    @bids = @claim.bids.includes(:lawyer).with_attached_document
+    @bids        = @claim.bids.includes(:lawyer).with_attached_document
+    @is_approved = @bids.select{|bid| bid.status == "approved" }.present?
   end
 
   def new
@@ -20,15 +21,14 @@ class BidsController < ApplicationController
 
   def approve
     @bid.approved!
-    @bid.notify_lawyer(@claim)
-    @claim.Closed!
+    @claim.notify_lawyer_about_bid(@bid)
     denied_bids
     redirect_to claim_bids_path(@claim), notice: I18n.t("app.bid_approval")
   end
 
   def deny
     @bid.denied!
-    @bid.notify_lawyer(@claim)
+    @claim.notify_lawyer_about_bid(@bid)
     redirect_to claim_bids_path(@claim), notice: I18n.t("app.bid_denial")
   end
 
@@ -49,7 +49,7 @@ class BidsController < ApplicationController
     @bids =  @claim.bids.where("id NOT IN(?)", @bid.id)
     @bids.each do |bid|
       bid.denied!
-      bid.notify_lawyer(@claim)
+      @claim.notify_lawyer_about_bid(bid)
     end
   end
 end

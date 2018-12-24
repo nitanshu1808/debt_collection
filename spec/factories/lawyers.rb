@@ -10,6 +10,7 @@ FactoryBot.define do
         create_list(:education,       evaluator.record_count, lawyer: lawyer)
         create_list(:work_experience, evaluator.record_count, lawyer: lawyer)
         create(:address, user: lawyer)
+        lawyer.collection_areas << CollectionArea.last || create(:collection_area)
       end
     end
   end

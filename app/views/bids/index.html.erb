@@ -30,22 +30,27 @@
         <div class="row bid-num bid-info">
           <%= I18n.t("app.bid") %>#<%= index + 1 %>
           <% if @claim.business.id == current_user.id %>
-            <%= link_to  I18n.t("app.approve_bid"), approve_claim_bid_path(@claim, bid), class: "btn btn-success align-bid-decider-btn" %>
-            <%= link_to  I18n.t("app.deny_bid"),    deny_claim_bid_path(@claim, bid), class: "btn btn-danger align-bid-decider-btn" %>
+              <%= link_to  I18n.t("app.approve"), "javascript:void(0)", class: "btn btn-success align-bid-decider-btn" if @is_approved  %>
+              <%= link_to  I18n.t("app.approve_bid"), approve_claim_bid_path(@claim, bid), class: "btn btn-success align-bid-decider-btn" unless @is_approved %>
+              <%= link_to  I18n.t("app.deny_bid"),    deny_claim_bid_path(@claim, bid), class: "btn btn-danger align-bid-decider-btn" unless @is_approved %>
           <% end %>
         </div>
 
         <div class="form-group">
           <%= label_tag :lawyer_name,   I18n.t("app.lawyer_name")+ ":", class: "control-label col-sm-4 bid-info" %>
           <div class="col-sm-8 ">
-            <%= label_tag :lawyer_name, bid.lawyer_name, class: "control-label bid-info" %>
+            <%= link_to legal_professional_path(bid.lawyer) do %>
+              <%= label_tag :lawyer_name, bid.lawyer_name, class: "control-label bid-info" %>
+            <% end %>
           </div>
         </div>
 
         <div class="form-group">
           <%= label_tag :lawyer_email,   I18n.t("app.lawyer_email")+ ":", class: "control-label col-sm-4 bid-info" %>
           <div class="col-sm-8 ">
-            <%= label_tag :lawyer_email, bid.lawyer_email, class: "control-label bid-info" %>
+            <%= link_to legal_professional_path(bid.lawyer) do %>
+              <%= label_tag :lawyer_email, bid.lawyer_email, class: "control-label bid-info" %>
+            <% end %>
           </div>
         </div>
 

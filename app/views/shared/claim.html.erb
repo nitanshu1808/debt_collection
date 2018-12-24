@@ -14,14 +14,18 @@
     <div class="form-group">
       <%= label_tag :name, I18n.t("user.name"), class: "control-label col-sm-4" %>
       <div class="col-sm-8 ">
-        <%= label_tag :name, @owner.name, class: "control-label" %>
+        <%= link_to business_url(@owner) do %>
+          <%= label_tag :name, @owner.name, class: "control-label" %>
+        <% end %>
       </div>
     </div>
 
     <div class="form-group">
       <%= label_tag :email, I18n.t("user.email"), class: "control-label col-sm-4" %>
       <div class="col-sm-8 ">
-        <%= label_tag :email, @owner.email, class: "control-label" %>
+        <%= link_to business_url(@owner) do %>
+          <%= label_tag :email, @owner.email, class: "control-label" %>
+        <% end %>
       </div>
     </div>
 

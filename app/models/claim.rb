@@ -42,6 +42,20 @@ class Claim < ApplicationRecord
     end
   end
 
+  def notify_lawyer_about_bid(bid)
+    if bid.approved? && self.Closed!
+      msg = I18n.t("app.bid_approved", val: identifier, name: business.user_name.titleize)
+    elsif bid.denied?
+      msg = I18n.t("app.bid_denied", val: identifier, name: claim.business.user_name.titleize)
+    end
+
+    notification = self.notifications.build({
+                user_id:              bid.lawyer_id,
+                notfication_message:  msg,
+                })
+    notification.save
+  end
+
   private
   def set_identifier
     self.identifier = "#{I18n.t("app.claim_keyword")}#{id}P#{Devise.friendly_token(6)}"
