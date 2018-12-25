@@ -24,6 +24,10 @@ class LegalProfessionalsController < ApplicationController
     lawyer_details
   end
 
+  def edit
+    render 'complete_profile'
+  end
+
   def index
     if params["collection_area_id"].present?
       @legal_professionals = Lawyer.completed_profiles.where("collection_areas.id =?", params["collection_area_id"])

@@ -1,5 +1,5 @@
 <div class="lawyer_profile">
-  <%= form_for @business, as: :user, url: business_path(@business) do |f| %>
+  <%= form_for @business, as: :user, url: business_path(@business), multipart: true do |f| %>
     <%= f.hidden_field :profile_completed , value: true%>
     <%= render 'shared/image_section', {f: f} %>
 

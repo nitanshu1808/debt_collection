@@ -83,4 +83,8 @@ module ApplicationHelper
     @notification = Notification.unread_msgs(current_user)
   end
 
+  def real_user(user)
+    user && current_user && user.id == current_user.id
+  end
+
 end

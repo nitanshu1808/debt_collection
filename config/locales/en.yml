@@ -142,6 +142,7 @@ en:
                             negatively affects the financial liquidity, stability and investment
                             capabilities of a business which are vital in the time of crisis."
     questionnaire:          "Questionnaire"
+    edit_profile:           "Edit Profile"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"

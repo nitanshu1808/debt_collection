@@ -18,6 +18,10 @@ class BusinessController < ApplicationController
     end
   end
 
+  def edit
+    render 'complete_profile'
+  end
+
   def show
     @address = @business.address
   end

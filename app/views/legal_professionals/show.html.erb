@@ -3,6 +3,9 @@
     <%= image_tag identify_user_profile_pic(@lawyer), alt: "Lawyer Image", class: "img-rounded align-profile-img" %>
     <div class="lawyer-email align-detail-row">
       <%= @lawyer.user_name.titleize %>
+      <% if real_user(@lawyer) %>
+        <%= link_to I18n.t("app.edit_profile"), edit_legal_professional_url( @lawyer), class: 'btn btn-danger profile-btn' %>
+      <% end %>
     </div>
   </div>
   <div class="complete-profile-sprtn-line"></div>
