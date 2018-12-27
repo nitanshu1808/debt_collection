@@ -1,6 +1,7 @@
 class BidsController < ApplicationController
   before_action :find_claim
   before_action :find_bid, only: [:approve, :deny]
+  before_action :mark_notification_as_read, only: :index
 
   def index
     @bids        = @claim.bids.includes(:lawyer).with_attached_document

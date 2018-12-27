@@ -93,7 +93,7 @@
   margin: 50px 13px;
 }
 .error{
-  color: red  !important;
+  color: #4A0000  !important;
   font-size: 15px !important;
   float: left;
   margin: 1px 0px 10px 0px;
@@ -146,7 +146,7 @@
 }
 
 .login-div{
-  border: 0.1px solid darkgrey;
+  border: 0.1px solid #660000;
   margin: 10px 0px;
 }
 
@@ -156,7 +156,7 @@
 }
 
 .info-box{
-  border: 0.1px solid darkgrey;
+  border: 0.1px solid #660000;
 }
 
 .info-username{
@@ -378,7 +378,7 @@
   padding: 1rem;
 }
 #main-content{
-  margin-bottom: 120px;
+  padding-bottom: 50px;
 }
 
 .profile_form{
@@ -466,7 +466,7 @@
   color: white;
   border: 1px solid #4A0000;
   width: 30%;
-  margin: 20px;
+  margin: 0px 20px;
 }
 .claim-description{
   /*width: 40%;*/
