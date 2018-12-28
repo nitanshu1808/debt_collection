@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
       @conversation  = current_user.sender_conversations.build(receiver_id: @user.id)
       @conversation.save
     end
-    @messages      = @conversation.messages.order(created_at: :desc)
+    @messages      = @conversation.messages
     @message       = @messages.build
   end
 

@@ -1,4 +1,4 @@
 $(".modal-dialog").addClass('modal-lg')
-$("#myModalLabel").html('<%= I18n.t("app.conversation", val: current_user.user_name.titleize) %>')
+$("#myModalLabel").html('<%= I18n.t("app.conversation", val: @user.user_name.titleize) %>')
 $(".modal-body").html('<%= j(render "messages/list" ) %>')
 $("#myModal").modal('show');

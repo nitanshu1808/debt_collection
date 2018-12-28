@@ -62,9 +62,8 @@ module ApplicationHelper
     current_user != user
   end
 
-  def message_body(message)
-    user = message.user_id == current_user.id ? current_user : @user
-    "<b>#{user.user_name}</b>: #{message.body}".html_safe
+  def message_sender(message)
+    message.user_id == current_user.id ? current_user : @user
   end
 
   def identify_claim_path
@@ -89,6 +88,15 @@ module ApplicationHelper
 
   def identify_btn_id
     "#lwyr_" + "#{params["controller"]}"
+  end
+
+  def message_class(message)
+    message.user_id == current_user.id ? "msg-sndr" : "msg-recvr"
+  end
+
+  def message_user_path(user)
+    _user = user.id == current_user.id ? current_user : user
+    _user.is_lawyer? ? legal_professional_path(_user) : business_path(_user)
   end
 
 end

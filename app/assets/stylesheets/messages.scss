@@ -1,6 +1,5 @@
 .message-container {
     border: 2px solid #dedede;
-    background-color: #f1f1f1;
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
@@ -40,4 +39,12 @@
     float: left;
     color: #999;
 }
-
+.msg-sndr{
+    background-color: #f1f1f1;
+}
+.msg-recvr{
+    background-color: aliceblue;
+}
+.user-name-link{
+    color: black !important;
+}

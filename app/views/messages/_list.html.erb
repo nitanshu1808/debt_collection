@@ -1,10 +1,18 @@
 <% if @messages.present? %>
   <% @messages.each do |message| %>
     <% if message.id? %>
-      <div class="message-container">
+      <div class="message-container <%= message_class(message) %>">
         <div>
           <%= image_tag "message.jpg", class: "message-icon" %>
-          <p><%= message_body(message) %></p>
+          <% user =  message_sender(message) %>
+          <p>
+            <%= link_to message_user_path(user) do %>
+              <b class="user-name-link">
+                <%= user.user_name %>:
+              </b>
+            <% end %>
+            <%= message.body %>
+          </p>
           <span class="time-right"><%= format_time(message.updated_at) %></span>
         </div>
       </div>
