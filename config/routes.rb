@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
   devise_for :users, :controllers => {:registrations => "users/registrations", :omniauth_callbacks => "users/omniauth_callbacks", :sessions => "users/sessions"}
 
+  get '/business_registration',               to: 'home#business_registration'
+  get '/legal_professional_registration',     to: 'home#legal_professional_registration'
+
   unauthenticated :user do
-    get '/business_registration',               to: 'home#business_registration'
-    get '/legal_professional_registration',     to: 'home#legal_professional_registration'
     get '/login',                               to: 'users/sessions#new'
   end
 

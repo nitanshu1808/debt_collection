@@ -65,4 +65,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def redirect_user_to_path
+    redirect_to identify_user_path, notice: I18n.t("devise.failure.already_authenticated")
+  end
+
 end

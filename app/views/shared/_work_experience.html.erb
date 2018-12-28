@@ -2,7 +2,7 @@
   <% work_exp = @lawyer.work_experiences %>
   <div class="panel-heading">
     <h4 class="panel-title">
-      <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><%= I18n.t("app.work_experience")+ " *" %></a>
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" id="lwyr_work_experience"><%= I18n.t("app.work_experience")+ " *" %></a>
       <%= link_to new_legal_professional_work_experience_url(@lawyer), class: "btn btn-danger btn-sm work-exp-btn", "data-remote" => true  do %>
         <span class=" glyphicon glyphicon-plus-sign"></span>
         <%= I18n.t("app.create_work_exp") %>

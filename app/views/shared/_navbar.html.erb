@@ -12,14 +12,6 @@
           <%= I18n.t("app.questionnaire") %>
         <% end %>
       </li>
-      <% if current_user %>
-        <li>
-          <%= link_to identify_user_profile do %>
-            <span class="glyphicon glyphicon-user"></span>
-            <%= I18n.t("app.welcome") + " " + current_user.user_name %>
-          <% end %>
-        </li>
-      <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
@@ -79,10 +71,21 @@
           </li>
         <% end %>
       <% end %>
-       <li>
+      <% if current_user.present? %>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <span class="glyphicon glyphicon-user"></span>
+            <%= I18n.t("app.welcome") + " " + current_user.user_name %>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="<%= identify_user_profile %>"><%= I18n.t("app.profile") %></a></li>
+            <li><%= logout_path %></li>
+          </ul>
+        </li>
+      <% else %>
         <%= login_logout_path %>
-      </li>
-
+      <% end %>
     </ul>
   </div>
 </nav>

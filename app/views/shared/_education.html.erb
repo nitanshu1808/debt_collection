@@ -2,7 +2,8 @@
   <% educations = @lawyer.educations %>
   <div class="panel-heading">
     <h4 class="panel-title">
-      <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><%= I18n.t("app.education")+ " *" %></a>
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" id="lwyr_education"><%= I18n.t("app.education")+ " *" %></a>
+
       <%= link_to new_legal_professional_education_url(@lawyer), class: "btn btn-danger btn-sm work-exp-btn education-btn", "data-remote" => true  do %>
         <span class=" glyphicon glyphicon-plus-sign"></span>
         <%= I18n.t("app.create_education") %>

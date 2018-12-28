@@ -3,13 +3,13 @@ module HomeHelper
 
   def login_logout_path
     content_tag :li do
-      current_user && logout_path || user_path
+      user_path
     end
   end
 
   def logout_path
     link_to destroy_user_session_path, method: :delete do
-      html_span("glyphicon glyphicon-log-in").html_safe + I18n.t("app.logout")
+      I18n.t("app.logout")
     end
   end
 

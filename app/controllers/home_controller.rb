@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :identify_user_path, if: :current_user
+  before_action :redirect_user_to_path, only: [:business_registration, :legal_professional_registration], if: :current_user
 
   def index
   end

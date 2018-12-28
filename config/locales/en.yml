@@ -143,6 +143,7 @@ en:
                             capabilities of a business which are vital in the time of crisis."
     questionnaire:          "Questionnaire"
     edit_profile:           "Edit Profile"
+    profile:                "Profile"
   user:
     already_exist:        "Email has already been taken"
     user_name:            "User Name"

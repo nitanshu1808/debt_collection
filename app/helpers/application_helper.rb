@@ -87,4 +87,8 @@ module ApplicationHelper
     user && current_user && user.id == current_user.id
   end
 
+  def identify_btn_id
+    "#lwyr_" + "#{params["controller"]}"
+  end
+
 end
