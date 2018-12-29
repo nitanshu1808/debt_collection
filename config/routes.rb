@@ -43,4 +43,5 @@ Rails.application.routes.draw do
     end
 
   end
+  get '*path' => redirect('/')
 end

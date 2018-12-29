@@ -4,7 +4,7 @@ class User < ApplicationRecord
   USER_TYPE         = %w(business lawyer)
 
   #devise modules
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :timeoutable,
          :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
   #validations
