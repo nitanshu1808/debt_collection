@@ -46,5 +46,3 @@ group :test do
   gem 'chromedriver-helper'
   gem 'rails-controller-testing'
 end
-
-gem 'omniauth-facebook'
